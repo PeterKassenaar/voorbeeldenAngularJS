@@ -1,0 +1,8 @@
+﻿<div ng-controller="personController">
+    <h1>09 - Routing</h1>
+    <input type="text" value="" ng-model="filterName" class="input-lg" placeholder="typ je naam..." />
+    <ul ng-repeat="person in persons | orderBy:'name' | filter: filterName">
+        <li>{{ person.name  | uppercase  }}</li>
+    </ul>
+</div>
+

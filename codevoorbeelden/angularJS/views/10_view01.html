@@ -1,0 +1,9 @@
+﻿<div ng-controller="personController">
+	<h1>10 - Data via een Factory</h1>
+
+	<input type="text" value="" ng-model="filterName" class="input-lg" placeholder="typ naam..." />
+	<ul ng-repeat="person in persons | orderBy:'name' | filter: filterName">
+		<li>{{ person.name  | uppercase  }}</li>
+	</ul>
+</div>
+

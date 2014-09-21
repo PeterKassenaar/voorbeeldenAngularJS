@@ -1,0 +1,9 @@
+﻿<div ng-controller="bookController">
+	<h1>11 - Live data via een service met $http</h1>
+
+	<input type="text" value="" ng-model="filterTitle" class="input-lg" placeholder="filter titel..." />
+	<ul ng-repeat="book in books| orderBy:'title' | filter: filterTitle">
+		<li>{{ book.title + ' - ' + book.firstAuthorName  }}</li>
+	</ul>
+</div>
+

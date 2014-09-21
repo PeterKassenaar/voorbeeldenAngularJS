@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+	<title>Angular JS authentication Example</title>
+	<link href="Content/bootstrap.css" rel="stylesheet" />
+</head>
+
+<body ng-controller="applicationController">
+	<div class="container">
+		<!-- Default 'navbar', showing login status-->
+		<div ng-if="currentUser">
+			<p>
+				Welcome, {{ currentUser.userName }}, 
+				you're logged in as <strong> {{currentUser.userRole }}</strong>
+			</p>
+		</div>
+		<div ng-if="!currentUser">
+			<p>
+				Not logged in, or login unsuccessful
+				<a href="#/login" class="btn btn-info">Login</a>
+			</p>
+		</div>
+		<hr />
+
+		<!-- View container -->
+		<div ng-view></div>
+
+		<!-- Default link back home-->
+		<p>
+			<a href="#/">Back home</a>
+		</p>
+
+	</div>
+
+	<!-- Vendor scripts -->
+	<script src="Scripts/angular.js"></script>
+	<script src="Scripts/angular-route.js"></script>
+	<!-- Custom Scripts & Services -->
+	<script src="js/app.js"></script>
+	<script src="js/services/interceptors.js"></script>
+	<script src="js/services/authFactory.js"></script>
+	<script src="js/services/sessionService.js"></script>
+
+	<!-- Controllers -->
+	<script src="js/controllers/applicationController.js"></script>
+	<script src="js/controllers/homeController.js"></script>
+	<script src="js/controllers/secretController.js"></script>
+	<script src="js/controllers/loginController.js"></script>
+</body>
+
+</html>

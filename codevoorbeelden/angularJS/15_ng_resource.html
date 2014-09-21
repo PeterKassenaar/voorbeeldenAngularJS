@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<!-- Voor het overzicht staat alle code in 1 bestand (ideaal: uit-refactoren naar diverse .js-bestanden) -->
+<html ng-app="myApp">
+<head>
+	<title>Angular JS Template</title>
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+	<link href="css/bootstrap.css" rel="stylesheet" />
+	<link href="css/styles.css" rel="stylesheet" />
+</head>
+<body>
+	<div class="container" ng-controller="booksController">
+		<!-- 1. Voorbeeld van ng-repeat, om een serie boeken op te halen via algemene API-call -->
+		<div ng-repeat="book in books">
+			<div class="book">
+				<p class="bookTitle">
+					{{ book.title}}
+				</p>
+				<p class="bookAuthor">
+					{{ book.firstAuthorName }}
+				</p>
+			</div>
+		</div>
+
+		<!-- 2. Voorbeeld van single book ophalen, via parameter EAN in de URL -->
+		<!-- <div class="book">
+			<p class="bookTitle">
+				{{ book.title}}
+			</p>
+			<p class="bookAuthor">
+				{{ book.firstAuthorName }}
+			</p>
+		</div>-->
+	</div>
+
+	<!-- Scripts below here -->
+	<script src="js/vendor/angular/angular.min.js"></script>
+	<script src="js/vendor/angular/angular-resource.min.js"></script>
+
+	<!-- Custom Scripts -->
+	<script>
+		var app = angular.module('myApp', ['ngResource']);
+		//var url = 'books.json'; // lokale url
+		var url = 'http://api.yindo.com/api/book/new/10'; // JSONP-URL, via externe API
+		// 3. var url = 'http://api.yindo.com/api/book/details/'; // JSONP-URL, om details van single book op te halen
+
+		app.controller('booksController', function ($scope, $resource, booksFactory) {
+
+			$scope.books = booksFactory.query(); // lokale call, .query()
+			// 2.  $scope.books = booksFactory.jsonp_query(); // externe call, .jsonp_query()
+			// 3. $scope.book = booksFactory.jsonp_get({ ean: '9789490767143' }); // EAN van 'De legende van de hemelrijders'
+		});
+
+		app.factory('booksFactory', ['$resource', function ($resource) {
+			// 1. Eenvoudigste manier:
+			return $resource(url);
+
+			// 2. Uitgebreider, met parameters en zelfgedefinieerde methodname jsonp_query:
+			//return $resource(url, {}, {
+			//	jsonp_query: { method: 'JSONP', params: { callback: 'JSON_CALLBACK' }, isArray: true }
+			//});
+
+			// 3. Met parameter voor EAN in de URL (documentatie: http://docs.angularjs.org/api/ngResource/service/$resource)
+			//return $resource(
+			//	url + ':ean',
+			//	{},
+			//	{
+			//		jsonp_get: {
+			//			method: 'JSONP',
+			//			params: { ean: '@ean', callback: 'JSON_CALLBACK' },
+			//			isArray: false
+			//		}
+			//	});
+		}]);
+	</script>
+</body>
+</html>

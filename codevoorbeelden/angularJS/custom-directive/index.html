@@ -1,0 +1,62 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>test popover directive</title>
+	<link rel="stylesheet" href="js/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+<body>
+	<!-- Credits : http://subliminalsources.com/9/building-angularjs-bootstrap-components-popover-directive-part-1/ -->
+	<span my-popover popover-html="Tekst in de popover" popover-placement="bottom" popover-label="Klik hier voor popover"></span>
+
+	<!-- Vendor Scripts -->
+	<script src="js/angular/angular.min.js"></script>
+	<script src="js/jquery/dist/jquery.min.js"></script>
+	<script src="js/bootstrap/dist/js/bootstrap.min.js"></script>
+	<!-- Custom scripts -->
+	<script>
+	var app = angular.module('myApp', ['Directives.popover']);
+
+	// app.directive('myPopover', function(){
+	// 	return {
+	// 		restrict: 'A',
+	// 		template: '<span>{{ label }}</span>',
+	// 		link: function (scope, el, attrs){
+
+	// 			console.log('Custom popover code loaded...');
+	// 			scope.label = attrs.popoverLabel;
+	// 			$(el).popover({
+	// 				trigger: 'click',
+	// 				html: true,
+	// 				content : attrs.popoverHtml,
+	// 				placement : attrs.popoverPlacement
+	// 			});
+	// 		}
+
+	// 	}
+
+	// });
+
+angular.module('Directives.popover',[])
+	.directive('myPopover', function(){
+		return {
+			restrict: 'A',
+			template: '<span>{{ label }}</span>',
+			link: function (scope, el, attrs){
+
+				console.log('Custom popover code loaded...');
+				scope.label = attrs.popoverLabel;
+				$(el).popover({
+					trigger: 'click',
+					html: true,
+					content : attrs.popoverHtml,
+					placement : attrs.popoverPlacement
+				});
+			}
+
+		}
+
+	});
+	</script>
+</body>
+</html>
