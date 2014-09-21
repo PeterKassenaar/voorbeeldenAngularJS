@@ -1,7 +1,7 @@
 voorbeeldenAngularJS
 ====================
 
-Codevoorbeelden en oefenbestanden bij de training JavaScript.
+Codevoorbeelden en oefenbestanden bij de training AngularJS.
 
 ##Gebruik
 Open de map \codevoorbeelden en bekijk de oefenbestanden. Inhoud:
