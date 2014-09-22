@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title>Angular JS Template</title>
+	<link href="css/bootstrap.css" rel="stylesheet" />
+	<link href="css/styles.css" rel="stylesheet" />
+</head>
+<body>
+	<div class="container">
+		<!-- Insert UI here -->
+		<h1>{{ 2 + 2 }}</h1>
+		<input type="text"
+			   name="userName"
+			   placeholder="Uw gebruikersnaam"
+			   ng-model="username"
+			   ng-blur="checkField()"
+			   required
+			   pattern="[a-zA-Z]+" />
+
+		<div ng-show="">Er zit een fout in het veld {{ error}}</div>
+
+	</div>
+
+	<!-- ***************-->
+	<!-- Vendor scripts -->
+	<!-- ***************-->
+	<script src="js/vendor/angular/angular.min.js"></script>
+	<!-- Custom scripts -->
+	<script>
+		// eigen scripts bij schrijven
+	</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title>Angular JS ng-include directive</title>
+	<link href="css/bootstrap.css" rel="stylesheet" />
+	<link href="css/styles.css" rel="stylesheet" />	
+</head>
+<body>
+	<div class="container" ng-controller="myController">
+		<!-- directive ng-include. LET OP: bestandsnaam wrappen in single quotes! -->
+		<header ng-include="'/views/18_inc_header.html'"></header>
+
+		<h2>Dit is de inhoud van de pagina </h2>
+		<div>
+			Tincidunt integer eu augue augue nunc elit dolor, luctus pl
+			acerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.
+		</div>
+		<footer ng-include="'/views/18_inc_footer.html'"></footer>
+
+	</div>
+	<!-- ***************-->
+	<!-- Vendor scripts -->
+	<!-- ***************-->
+	<script src="js/vendor/angular/angular.min.js"></script>
+
+	<!-- Custom scripts -->
+	<script>
+		// eigen scripts bij schrijven
+		angular.module('myApp', []).
+		controller('myController', function ($scope) {
+			// controller code
+		});
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title>Angular JS - Google Maps</title>
+	<link href="css/bootstrap.css" rel="stylesheet" />
+	<style>
+		#map_canvas,
+		.angular-google-map-container {
+			border: 1px solid #333;
+			height: 400px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container" ng-controller="mapsController">
+		<!--Google Maps : Custom Implementation  -->
+		<div class="row">
+			<div class="col-md-8">
+				<h1>AngularJS &amp; Google Maps </h1>
+				<div id="map_canvas"></div>
+			</div>
+		</div>
+
+
+
+		<!--Google Maps : AngularJS-Google-Maps Implementation  -->
+		<div class="row">
+			<div class="col-md-8">
+				<!--<h1>Directive - angular-google-maps.js</h1>-->
+				<!--<google-map center="mapViaDirective.center"
+							zoom="mapViaDirective.zoom"
+							class="angular-google-map-container">
+				</google-map>-->
+				<!-- Stap 2, met marker -->
+				<!--<google-map center="mapViaDirective.center"
+							zoom="mapViaDirective.zoom"
+							class="angular-google-map-container">
+					<marker coords="mapViaDirective.center">
+					</marker>
+				</google-map>-->
+				<!-- Stap 3, met infowindow, zie voor overige options: http://angular-google-maps.org/api -->
+				<!--<google-map center="mapViaDirective.center"
+							zoom="mapViaDirective.zoom"
+							class="angular-google-map-container">
+					<marker coords="mapViaDirective.center">
+						<window options="windowContent"></window>
+					</marker>
+				</google-map>-->
+			</div>
+		</div>
+	</div>
+	<!-- ***************-->
+	<!-- Vendor scripts -->
+	<!-- ***************-->
+	<script src="js/vendor/angular/angular.min.js"></script>
+	<script src="//maps.googleapis.com/maps/api/js"></script>
+	<!-- Voor implementatie via Directive -->
+	<!--<script src="js/underscore-min.js"></script>
+	<script src="js/vendor/angular/angular-google-maps.min.js"></script>-->
+
+	<!-- Custom scripts -->
+	<script>
+		// MapsController - een Google Map op basis van locatie in #map_canvas schrijven
+		angular.module('myApp', []).
+			controller('mapsController', function ($scope) {
+
+				//#region Custom Implementation
+				// 1. Coordinaten instellen
+				var adresNieuwegein = {
+					lat: '52.04826689999999',
+					lng: '5.091499'
+				},
+					location;
+
+				/*
+				// 1a: OF: met HTML5 Geolocation (maar: dan ook aanpassen voor asynchronicity!)
+				if ("geolocation" in navigator) {
+					navigator.geolocation.getCurrentPosition(function (position) {
+						location = new google.maps.LatLng(position.coords.latitude,
+														 position.coords.longitude);
+						map.setCenter(location);
+					});
+				}
+				*/
+
+				// 2. location instellen
+				location = new google.maps.LatLng(adresNieuwegein.lat, adresNieuwegein.lng);
+
+				// 3. Options instellen
+				var mapOptions = {
+					center: location,
+					zoom: 13,
+					mapTypeId: google.maps.MapTypeId.ROADMAP
+				};
+
+				// 4. Map maken
+				var map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+
+				//************************
+				// Optioneel - extra's toevoegen
+				//***********************
+		/*
+				// 5. Marker toevoegen
+				marker = new google.maps.Marker({
+					position: location,
+					map: map,
+					title: 'Vijfhart Nieuwegein - opleidingslocatie',
+					animation: google.maps.Animation.DROP
+				});
+
+				// 6. Info Window tonen
+				var infowindow = new google.maps.InfoWindow({
+					content: '<h3>Vijfhart Nieuwegein</h3><p>Opleidingslocatie</p><p>Iepenhoeve 39<br />3438 MR Nieuwegein</p>'
+				});
+
+				// 7. Event Listener voor marker toevoegen
+				google.maps.event.addListener(marker, 'click', function () {
+					infowindow.open(map, marker);
+				});
+				*/
+				//#endregion
+
+				//*****************************************
+				//#region Angular Google Maps implementation
+				//*********************************************
+				$scope.mapViaDirective = {
+					center: {
+						latitude: adresNieuwegein.lat,
+						longitude: adresNieuwegein.lng
+					},
+					zoom: 11
+				}
+
+				$scope.windowContent = {
+					content: '<h3>Vijfhart Nieuwegein</h3><p>Opleidingslocatie</p><p>Iepenhoeve 39<br />3438 MR Nieuwegein</p>'
+				}				
+
+				//#endregion
+
+
+			});
+	</script>
+</body>
+
+</html>
