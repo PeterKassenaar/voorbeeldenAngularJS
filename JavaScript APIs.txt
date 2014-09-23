@@ -1,0 +1,14 @@
+
+// HIER eerst registreren voor API Key
+http://developer.marvel.com/  - Marvel comics
+https://www.rijksmuseum.nl/nl/api - Rijksmuseum
+https://www.themoviedb.org/documentation/api - The Movie Database
+
+
+// DEZE API's zijn open, zonder registratie beschikbaar (registratie aanvullend vaak wel mogelijk)
+http://openweathermap.org/API - Open weathermap
+http://ergast.com/mrd/ - Ergast Motor (Formule 1) API
+http://api.yindo.com/api/book/new/10 - 10 nieuwste Yindo-boeken
+http://www.filltext.com/ - random user data
+http://omdbapi.com/ - Open Movie Database
+https://api.github.com/users/ - GitHub user information.
