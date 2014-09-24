@@ -1,23 +1,78 @@
-﻿<!DOCTYPE html>
-<html ng-app="myApp">
+﻿<html ng-app="myApp">
 <head>
 	<title>Angular JS Template</title>
 	<link href="css/bootstrap.css" rel="stylesheet" />
 	<link href="css/styles.css" rel="stylesheet" />
+	<style>
+		input {
+			margin: 10px;
+		}
+		/* styles op basis van ng-classes */
+		/*
+		input.ng-pristine {
+			background-color:#ffd;
+		}
+		.ng-dirty {
+			background-color:#ffa;
+		}
+		.ng-valid {
+			background-color: #b6ff00;
+			border: 1px solid #4cff00;
+		}
+		.ng-invalid {
+			background-color: #ff6a00;
+			border: 1px solid #ff0000;
+		}
+		.valid {
+			background-color: #b6ff00;
+			border: 1px solid #4cff00;
+		}
+			*/
+		.error {
+			background-color: #ff6a00;
+			border: 1px solid #ff0000;
+		}
+	</style>
 </head>
 <body>
-	<div class="container">
+	<div class="container" ng-controller="validateController">
 		<!-- Insert UI here -->
-		<h1>{{ 2 + 2 }}</h1>
-		<input type="text"
-			   name="userName"
-			   placeholder="Uw gebruikersnaam"
-			   ng-model="username"
-			   ng-blur="checkField()"
-			   required
-			   pattern="[a-zA-Z]+" />
+		<form name="form1" novalidate>
+			* verplicht veld<br />
+			<input type="text"
+				   name="firstName"
+				   placeholder="Voornaam *"
+				   ng-model="user.firstName"
+				   ng-blur="checkField()"
+				   required
+				   pattern="[a-zA-Z]+"
+				   class="input-lg" /><br />
+			<input type="text"
+				   name="lastName"
+				   placeholder="Achternaam *"
+				   ng-model="user.lastName"
+				   required
+				   class="input-lg" /><br />
+			<input type="email"
+				   name="email"
+				   placeholder="E-mailadres *"
+				   ng-model="user.email"
+				   required
+				   class="input-lg" /><br />
+			<input type="number"
+				   ng-model="user.age"
+				   ng-maxlength="3"
+				   ng-minlength="1"
+				   placeholder="leeftijd"
+				   class="input-lg" /><br />
+			<!--<button class="btn btn-primary" ng-click="addUser(user)">Verzenden</button>-->
 
-		<div ng-show="">Er zit een fout in het veld {{ error}}</div>
+			<div ng-class="{'valid' : form1.$valid, 'error': !form1.$valid}"
+				 ng-show="!form1.$valid">{{ validationMsg }}</div>
+
+			<button class="btn btn-primary" ng-disabled="!form1.$valid">Verzenden</button>
+		</form>
+
 
 	</div>
 
@@ -27,7 +82,23 @@
 	<script src="js/vendor/angular/angular.min.js"></script>
 	<!-- Custom scripts -->
 	<script>
-		// eigen scripts bij schrijven
+		angular.module('myApp', [])
+		.controller('validateController', function ($scope) {
+			// Bijvoorbeeld: een valid/invalid message tonen
+			var msgValid = 'Het formulier is goed ingevuld';
+			var msgInvalid = 'Het formulier bevat nog fouten';
+			$scope.validationMsg =( form1.$valid && !form1.$pristine) ? msgValid : msgInvalid;
+
+			// Het in te vullen user-object
+			$scope.user = {};
+
+			$scope.addUser = function (user) {
+				console.log(user);
+				alert('user toevoegen: ' + user.firstName + ' ' + user.lastName);
+				// TODO: user echt aan database toevoegen.
+			};
+		});
+
 	</script>
 </body>
 </html>
