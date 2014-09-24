@@ -2,30 +2,35 @@
 	//
 	// Eerste factory/service op deze app, de Interceptor (om XHR-requests te onderscheppen)
 	//
-	app.factory('myInterceptor', function ($q) {
+	app.factory('myInterceptor', function ($q, $location) {
 		// 1. Maak een 'factory'-object
 		var interceptor = {};
 
 		// 2. Functies om success te onderscheppen
 		interceptor.request = function (config) {
 			// Request success
-			console.log('in interceptor request voor ' + config.url + ' : ', config);
+			console.info('in interceptor request voor ' + config.url + ' : ', config);
 			// Doe aanvullende dingen...
+
+			// Zet een AUth header config.headers('myauth', 'xxx-1224')
 			// Return the config or wrap it in a promise if blank.
+			// Toon Loading indicator
 			return config || $q.when(config);
 		};
 
-		interceptor.response = function (response) {
+		interceptor.response = function (config) {
 			// Response success
-		    console.log('in interceptor response: ', response);
+			console.log('in interceptor response: ', config);
 			// ... doe aanvullende dingen, bijvoorbeeld op basis van response.status == 401 (Unauthorized)
-			return response || $q.when(response);
+			// Verberg loading indicator
+			return config || $q.when(config);
 		};
 
 		// 3. Functies om de Errors af te handelen.
 		interceptor.requestError = function (rejection) {
 		    console.log('in interceptor requestError: ', rejection); // Contains the data about the error on the request.
 		    // Return the promise rejection.
+			// Verberg loading indicator
 		    return $q.reject(rejection);
 		};
 
@@ -33,9 +38,16 @@
 		    console.log('in interceptor responseError', rejection); // Contains the data about the error on the response.
 		    // Return the promise rejection.
 		    // bijvoorbeeld: 404, not found:
+
+			// Verberg loading indicator
 		    if (rejection.status === 404) {
-		        window.location = 'views/404.html'; // of gebruik Angular $location() object.
-		        return;
+		        //window.location = 'views/404.html'; // of gebruik Angular $location() object.
+		    	$location.path('/');
+		    	return;
+		    }
+		    if (rejection.status === 401) { // unauthorized
+		    	$location.path('views/401.html'); // of gebruik Angular $location() object.
+		    	return;
 		    }
 		    return $q.reject(rejection);
 		};
@@ -65,7 +77,8 @@
 
 		factory.getBookDetail = function (ean) {
 		    return $http({
-		        method: 'jsonp',
+		    	method: 'jsonp',
+		
 		        url: urlDetails + ean + '?callback=JSON_CALLBACK'
 		    });
 		};
