@@ -3,6 +3,7 @@
 http://developer.marvel.com/  - Marvel comics
 https://www.rijksmuseum.nl/nl/api - Rijksmuseum
 https://www.themoviedb.org/documentation/api - The Movie Database
+http://www.last.fm/api - Last FM - artiesten- & muziekinformatie
 
 
 // DEZE API's zijn open, zonder registratie beschikbaar (registratie aanvullend vaak wel mogelijk)
