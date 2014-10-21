@@ -14,13 +14,13 @@
 				method: 'jsonp',
 				url: url + '?callback=JSON_CALLBACK'
 			});
-		};
+		};	
 
 		// 3b. Haal details op voor 1 boek.
 		factory.getBookDetail = function (ean) {
 			return $http({
 				method: 'jsonp',
-				url: urlDetails + ean + '?callback=JSON_CALLBACK'
+				url: urlDetails + ean + '/00000000-0000-0000-0000-000000000000?callback=JSON_CALLBACK'
 			});
 		};
 

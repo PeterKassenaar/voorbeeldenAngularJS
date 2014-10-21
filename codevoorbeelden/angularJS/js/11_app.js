@@ -4,12 +4,12 @@
 	app.config(function ($routeProvider) {
 		$routeProvider
 			.when('/', {				
-				templateUrl: '/views/11_view01.html' // Default (en enige) view in dit eenvoudige project
+				templateUrl: 'views/11_view01.html' // Default (en enige) view in dit eenvoudige project
 			})
 			.when('/namen', {				
-				templateUrl: '/views/11_view01.html'
+				templateUrl: 'views/11_view01.html'
 			})		
-		.otherwise({ redirectTo: '/views/11_view01.html' });
+		.otherwise({ redirectTo: '/' });
 
 	});
 })();
