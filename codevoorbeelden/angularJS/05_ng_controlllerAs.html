@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title>Angular JS Template</title>
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+	<link href="css/bootstrap.css" rel="stylesheet" />
+	<link href="css/styles.css" rel="stylesheet" />
+</head>
+<body>
+	<!-- In de Controller As-syntaxis wordt een alias voor de Controller gebruikt. -->
+	<div class="container" ng-controller="personController as p">
+		<h1>05 - Controllers As-syntaxis (nieuw)</h1>
+		<input type="text" value="" ng-model="filterName" class="input-lg" placeholder="typ je naam..." />
+		<ul ng-repeat="person in p.persons | orderBy:'name' | filter: filterName">
+			<li>{{ person.name  | uppercase  }}</li>
+		</ul>
+		<!-- Voorbeeld van enkele overige properties -->
+		<h2>Stad: {{ p.city }} </h2>
+		<h3>Favoriet land: {{ p.country.favorite }} </h3>
+
+
+	</div>
+	<!-- Scripts below here -->
+	<script src="js/vendor/angular/angular.min.js"></script>
+	<script>
+		// Controller As-syntaxis, kennen geen $scope. Alle properties
+		// worden rechtstreeks op de function (dus op 'this') geplaatst.
+		angular.module('myApp', [])
+			.controller('personController', 
+			function () {
+
+				var vm = this;
+
+				vm.persons = [{ 'name': 'John' },
+					{ 'name': 'Bob' },
+					{ 'name': 'Bart' },
+					{ 'name': 'Sandra' },
+					{ 'name': 'Harry' },
+					{ 'name': 'Peter' },
+					{ 'name': 'Michiel' },
+					{ 'name': 'Jeroen' },
+					{ 'name': 'Irene' },
+					{ 'name': 'Mike' }
+				];
+
+				// 2. Stad
+				vm.city = 'New York';
+
+				// 3: Land
+				vm.country = {
+					regular: 'Nederland',
+					favorite: 'Bahama\'s'
+				};
+
+				vm.bestellen = function(){
+					vm.orderID = 12234;
+				}
+			});
+
+
+
+
+
+
+
+
+
+
+
+
+	</script>
+</body>
+</html>
