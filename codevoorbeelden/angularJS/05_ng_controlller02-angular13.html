@@ -31,7 +31,7 @@
 
 		// 2. Voeg Controller toe (getter)
 		angular.module('myApp')
-		.controller('personController', function ($scope) {
+			.controller('personController', function ($scope) {
 				// Meerdere variabelen maken in de $scope:
 				// 1. array persons[] in de $scope
 				$scope.persons = [{ 'name': 'John' },
@@ -59,10 +59,6 @@
 					alert('Order mijn pizza!!')
 				}
 		});
-
-		function order2() {
-			alert("order pizza 2!");
-		}
 	</script>
 </body>
 </html>
