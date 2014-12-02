@@ -18,7 +18,7 @@
 	</style>
 </head>
 <body>
-	<div class="container" ng-controller="myController">
+	<div class="container" ng-controller="myController">		
 		<div><input type="checkbox" ng-model="checked" />Check voor tonen/verbergen van tekst</div>
 		<div class="visible" ng-if="checked">
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit
@@ -36,7 +36,7 @@
 	<script>
 		// some (random) examples
 		function myController($scope) {
-
+			// $scope.checked = true;
 		}
 	</script>
 </body>
