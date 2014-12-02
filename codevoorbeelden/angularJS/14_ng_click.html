@@ -5,14 +5,6 @@
 	<link href="css/bootstrap.css" rel="stylesheet" />
 	<link href="css/styles.css" rel="stylesheet" />
 	<style>
-
-    .geel{
-
-      background-color: #ffff00;
-      color: black;
-      font-size: 40px;
-    }
-
 		.selectorBar {
 			width: 400px;
 			height: 60px;
@@ -44,9 +36,7 @@
 <body>
 	<div class="container" ng-controller="clickController">
 
-    <div ng-class="{'geel' : chkToggle, 'black' : andereVar }">Hello Geel</div>
-
-		<!-- Insert UI here -->
+  <!-- Insert UI here -->
 		<div class="selectorBar" ng-class="{ 'active' : isSelected, 'vet' : true }">
 			{{ text }}<br />
 		</div>
