@@ -5,6 +5,7 @@ https://www.rijksmuseum.nl/nl/api - Rijksmuseum
 https://www.themoviedb.org/documentation/api - The Movie Database
 http://www.last.fm/api - Last FM - artiesten- & muziekinformatie
 https://developers.google.com/youtube/v3/ - YouTube - custom YouTube features
+https://addb.absolutdrinks.com/docs/ - Eigen drankjes mixen, na sign-up
 
 
 // DEZE API's zijn open, zonder registratie beschikbaar (registratie aanvullend vaak wel mogelijk)

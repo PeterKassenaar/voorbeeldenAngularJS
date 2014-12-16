@@ -1,9 +1,32 @@
 ﻿<div ng-controller="bookController">
-	<h1>11 - Live data via een service met $http</h1>
+  <h1>11 - Live data via een service met $http</h1>
 
-	<input type="text" value="" ng-model="filterTitle" class="input-lg" placeholder="filter titel..." />
-	<ul ng-repeat="book in books| orderBy:'title' | filter: filterTitle">
-		<li>{{ book.title + ' - ' + book.firstAuthorName  }}</li>
-	</ul>
+  Weer in een bepaalde stad ophalen
+  <h2>Wat is het weer in...</h2>
+  <input type="text" ng-blur="resetWeather()" ng-model="city" name="txtCity" placeholder="typ een stad..."/>
+  <button ng-click="getWeather()">Haal weer op</button>
+  <h2 ng-show="graden">in {{ plaatsnaam }} is het {{ graden }} graden.</h2>
+  <hr/>
+  <!-- Voor ophalen van boeken via Yindo -->
+  <input type="text" value="" ng-model="filterTitle" class="input-lg" placeholder="filter titel..."/>
+  <ul>
+    <li ng-repeat="book in books | filter: filterTitle">
+      {{ book.title + ' - ' + book.firstAuthorName }}
+    </li>
+  </ul>
+
+  <h2>Dummy People data</h2>
+  <!-- Via FillText.com, ophalen van dummy data voor personen-->
+  <!--<ul>-->
+  <!--<li ng-repeat="person in people">{{ person.fname + '  ' + person.lname  }} ({{person.email}})</li>-->
+  <!--</ul>-->
+  <!-- Partial books ophalen-->
+  <!--<h2>PartialBooks</h2>
+    <ul>
+        <li ng-repeat="book in partialBooks| orderBy:'id'">
+            {{ book.id+ ': '+ book.title + ' - ' + book.name  }} (dit boek is in het {{ book.language }})
+        </li>
+    </ul>-->
+
 </div>
 
