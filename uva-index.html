@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/index.css"/>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+
+<script src="bower_components/angular/angular.min.js"></script>
+</head>
+<body id="body" ng-cloak>
+<div class="container" ng-controller="myController as vm">
+    <h2>Chuck Norris Facts</h2>
+    <ul class="list-group">
+        <li class="list-group-item" ng-repeat="quote in vm.quotes">{{ quote.quote }} (ID: {{ quote.id}})</li>
+    </ul>
+    <div class="alert-danger" ng-show="vm.error">ER IS EEN FOUT OPGETREDEN!</div>
+</div>
+</body>
+</div>
+<!-- Vendor scripts -->
+<script src="cordova.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>
