@@ -2,18 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="65844304-7409-4be1-aa93-3233809caa7a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/codevoorbeelden/angularJS/js/09_app.js" afterPath="$PROJECT_DIR$/codevoorbeelden/angularJS/js/09_app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/codevoorbeelden/angularJS/js/09_ng_detailController.js" afterPath="$PROJECT_DIR$/codevoorbeelden/angularJS/js/09_ng_detailController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/codevoorbeelden/angularJS/views/09_view01.html" afterPath="$PROJECT_DIR$/codevoorbeelden/angularJS/views/09_view01.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/codevoorbeelden/angularJS/js/10_ng_controller01.js" afterPath="$PROJECT_DIR$/codevoorbeelden/angularJS/js/10_ng_controller01.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/codevoorbeelden/angularJS/js/10_ng_factory01.js" afterPath="$PROJECT_DIR$/codevoorbeelden/angularJS/js/10_ng_factory01.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/codevoorbeelden/angularJS/js/11_ng_controller01.js" afterPath="$PROJECT_DIR$/codevoorbeelden/angularJS/js/11_ng_controller01.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/codevoorbeelden/angularJS/js/11_ng_factory01.js" afterPath="$PROJECT_DIR$/codevoorbeelden/angularJS/js/11_ng_factory01.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/codevoorbeelden/angularJS/11_ng_http.html" afterPath="$PROJECT_DIR$/codevoorbeelden/angularJS/11_ng_http.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/codevoorbeelden/angularJS/views/11_view01.html" afterPath="$PROJECT_DIR$/codevoorbeelden/angularJS/views/11_view01.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/codevoorbeelden/angularJS/12_ng_constants.html" afterPath="$PROJECT_DIR$/codevoorbeelden/angularJS/12_ng_constants.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/codevoorbeelden/angularJS/js/13_app.js" afterPath="$PROJECT_DIR$/codevoorbeelden/angularJS/js/13_app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/codevoorbeelden/angularJS/js/13_ng_factory01.js" afterPath="$PROJECT_DIR$/codevoorbeelden/angularJS/js/13_ng_factory01.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/codevoorbeelden/angularJS/14_ng_click.html" afterPath="$PROJECT_DIR$/codevoorbeelden/angularJS/14_ng_click.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/codevoorbeelden/angularJS/16_ng_directive01.html" afterPath="$PROJECT_DIR$/codevoorbeelden/angularJS/16_ng_directive01.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/codevoorbeelden/angularJS/17_ng_transclusion.html" afterPath="$PROJECT_DIR$/codevoorbeelden/angularJS/17_ng_transclusion.html" />
     </list>
     <ignored path="voorbeeldenAngularJS.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,7 +27,58 @@
     <favorites_list name="voorbeeldenAngularJS" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="15_ng_resource.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/codevoorbeelden/angularJS/15_ng_resource.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="20.3" vertical-offset="609" max-vertical-offset="1886">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="16_ng_directive01.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/codevoorbeelden/angularJS/16_ng_directive01.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-8.433333" vertical-offset="0" max-vertical-offset="966">
+              <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="17_ng_transclusion.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/codevoorbeelden/angularJS/17_ng_transclusion.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.0666666" vertical-offset="667" max-vertical-offset="1702">
+              <caret line="33" column="51" selection-start-line="33" selection-start-column="51" selection-end-line="33" selection-end-column="51" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="16_ng_directive02.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/codevoorbeelden/angularJS/16_ng_directive02.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1725">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="17_article.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/codevoorbeelden/angularJS/views/17_article.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-4.6" vertical-offset="0" max-vertical-offset="276">
+              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -77,6 +119,9 @@
         <option value="$PROJECT_DIR$/codevoorbeelden/angularJS/12_ng_constants.html" />
         <option value="$PROJECT_DIR$/codevoorbeelden/angularJS/js/13_ng_factory01.js" />
         <option value="$PROJECT_DIR$/codevoorbeelden/angularJS/js/13_app.js" />
+        <option value="$PROJECT_DIR$/codevoorbeelden/angularJS/14_ng_click.html" />
+        <option value="$PROJECT_DIR$/codevoorbeelden/angularJS/16_ng_directive01.html" />
+        <option value="$PROJECT_DIR$/codevoorbeelden/angularJS/17_ng_transclusion.html" />
       </list>
     </option>
   </component>
@@ -219,6 +264,7 @@
     <property name="options.lastSelected" value="preferences.sourceCode.JavaScript" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="FullScreen" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -318,54 +364,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/codevoorbeelden/angularJS/js/09_ng_personController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="700">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/codevoorbeelden/angularJS/js/09_app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="224" max-vertical-offset="1176">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/codevoorbeelden/angularJS/09_ng_route.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="280" max-vertical-offset="924">
-          <caret line="24" column="42" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/codevoorbeelden/angularJS/js/09_ng_personController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="700">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="112" max-vertical-offset="1568">
-          <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/JavaScript APIs.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="644">
@@ -724,6 +722,54 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.44616878" vertical-offset="0" max-vertical-offset="1031">
           <caret line="20" column="65" selection-start-line="20" selection-start-column="65" selection-end-line="20" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/codevoorbeelden/angularJS/14_ng_click.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.023279352" vertical-offset="207" max-vertical-offset="3335">
+          <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/codevoorbeelden/angularJS/15_ng_resource.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="20.3" vertical-offset="609" max-vertical-offset="1886">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/codevoorbeelden/angularJS/16_ng_directive01.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.433333" vertical-offset="0" max-vertical-offset="966">
+          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/codevoorbeelden/angularJS/views/17_article.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.6" vertical-offset="0" max-vertical-offset="276">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/codevoorbeelden/angularJS/17_ng_transclusion.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.0666666" vertical-offset="667" max-vertical-offset="1702">
+          <caret line="33" column="51" selection-start-line="33" selection-start-column="51" selection-end-line="33" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/codevoorbeelden/angularJS/16_ng_directive02.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1725">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>

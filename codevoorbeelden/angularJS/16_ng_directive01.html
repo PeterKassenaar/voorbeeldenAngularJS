@@ -12,7 +12,9 @@
 <body>
 	<div class="container">
 		<!-- custom directive -->
-		<div data-my-clock></div>
+		<h1>
+			<div data-my-clock></div>
+		</h1>
 	</div>
 	<!-- ***************-->
 	<!-- Vendor scripts -->
@@ -22,7 +24,7 @@
 	<!-- Custom scripts -->
 	<script>
 		
-		var app = angular.module('myApp', [])
+		var app = angular.module('myApp', []);
 		app.directive('myClock', function () {
 			return {
 				template: '<p>My clock! </p>'

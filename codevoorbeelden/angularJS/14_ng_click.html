@@ -102,12 +102,12 @@
 					$scope.enterCount++;
 					//alert(' op Enter gedrukt');
 				}
-			}
+			};
 			// Handle click on 'Select' button
 			$scope.toggleBar = function () {
 				$scope.text = 'Times clicked: ' + $scope.timesClicked++;
 				$scope.isSelected = !$scope.isSelected;
-			}
+			};
 
 			// fill select menu
 			$scope.colors = [
@@ -121,7 +121,7 @@
 			// update change in select menu
 			$scope.updateChangeValue = function () {
 				$scope.selectedColor = $scope.color.name;
-			}
+			};
 			// set default value
 			//$scope.color = $scope.colors[2]; // red
 
