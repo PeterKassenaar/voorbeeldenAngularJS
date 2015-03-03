@@ -12,9 +12,9 @@
         <h1>03- Simple Filtering</h1>
 
         <input type="text" value="" ng-model="name" class="input-lg" placeholder="typ je naam..." />
-        <ul ng-repeat="firstName in names | filter:name">
+        <ul>
             <!-- met | wordt de resultaatset gefilterd volgens het aangegeven filter. Hier: hoofdletters (uppercase)-->
-            <li> {{ firstName | uppercase }}</li>
+            <li ng-repeat="firstName in names | filter:name"> {{ firstName | uppercase }}</li>
         </ul>
 
     </div>

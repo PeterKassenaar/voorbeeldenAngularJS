@@ -14,8 +14,10 @@
 		<input type="text" value="" ng-model="name" class="input-lg" placeholder="typ je naam..." /> Hello {{ name }}
 
 		<!-- directive ng-repeat voor het loopen over een data-collectie -->
-		<ul ng-repeat="firstName in names">
-			<li>Hello {{ firstName }}</li>
+		<ul>
+			<li ng-repeat="firstName in names">
+				Hello {{ firstName }}
+			</li>
 		</ul>
 
 	</div>
