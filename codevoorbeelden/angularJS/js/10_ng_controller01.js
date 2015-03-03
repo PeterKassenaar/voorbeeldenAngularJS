@@ -1,16 +1,15 @@
-﻿(function (app) {
+﻿(function () {
+	// Minify-safe syntax
+	angular.module('myApp')
+		.controller('personController', personController);
 
 	// 2. Maak de  controller
-	var personController = function ($scope, personFactory, personService) {
+	personController.$inject = ['$scope', 'personFactory'];
+	function personController ($scope, personFactory) {
 		// via een factory
 		$scope.persons = personFactory.getPersons();
 
 		// via een service
-		$scope.mensen = personService.getPersons();
-	};
-
-	// hier: met minify-safe syntax
-	app.controller('personController', ['$scope', 'personFactory', 'personService',  personController]);
-
-
-})(angular.module('myApp')); // bestaande module doorgeven als parameter
+		//$scope.mensen = personService.getPersons();
+	}
+})();

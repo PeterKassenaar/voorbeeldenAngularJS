@@ -1,5 +1,5 @@
 ﻿(function () {
-	// 1. Definieer de module/app in dit bestand en voeg (later) eventuele dependencies toe
+	// 1. Definieer de module/app in dit bestand en voeg dependencies toe
 	angular.module('myApp', ['ngRoute']);
 
 	// 2. Routes configureren
@@ -7,10 +7,8 @@
 		.config(['$routeProvider', function ($routeProvider) {
 			$routeProvider
 				.when('/', {
-          //template: '<span>{{id}}</span>',
 					templateUrl: 'views/09_view01.html', // Default view
 					controller: 'personController'
-
 				})
 				.when('/namen', {
 					templateUrl: 'views/09_view01.html',
@@ -30,7 +28,5 @@
 					templateUrl: 'views/404.html'
 				})
 				 .otherwise({ redirectTo: '/404' });
-
 		}]);
-
 })();

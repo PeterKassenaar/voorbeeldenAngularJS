@@ -1,5 +1,6 @@
-﻿(function (app) {
-	app.factory('bookFactory', function ($http) {
+﻿(function () {
+	angular.module('myApp')
+		.factory('bookFactory', function ($http) {
 		// 1. Maak een 'factory'-object
 		var factory = {};
 
@@ -14,7 +15,7 @@
 				url: urlYindo + '?callback=JSON_CALLBACK',
                 cache:true
 			});
-		}
+		};
 
 		// 3b. Voorbeeld 2: Dummy persoonsgegevens ophalen vanaf FillText.com
 		//var urlPeople = 'http://filltext.com/?rows=10&fname={firstName}&lname={lastName}&email={email}&id={index}';
@@ -28,7 +29,7 @@
 
 		// 3c. Voorbeeld 3: Boeken ophalen, maar ALLEEN id, titel en auteur teruggeven.
 		//    i.e. een stukje BI in de service, in plaats van in de controller (==keuze van de maker).
-		
+
 		var partialBooks = [];
 		var loadPartialBooks = (function () {
 			return $http({
@@ -50,16 +51,16 @@
 
 		factory.getPartialBooks = function () {
 			return partialBooks;
-		}
-		
+		};
+
 		factory.getWeather = function (city) {
 			return $http({
 				method: 'get',
 				url: 'http://api.openweathermap.org/data/2.5/weather?units=metric&q=' + city
 			});
-		}
+		};
 
 		// 4. Altijd tot slot: retourneer het factory-object
 		return factory;
 	});
-})(angular.module('myApp'));
+})();

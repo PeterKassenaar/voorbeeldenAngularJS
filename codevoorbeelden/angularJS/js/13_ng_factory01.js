@@ -1,8 +1,9 @@
-﻿(function (app) {
+﻿(function () {
 	//
 	// Eerste factory/service op deze app, de Interceptor (om XHR-requests te onderscheppen)
 	//
-	app.factory('myInterceptor', function ($q, $location) {
+	angular.module('myApp')
+		.factory('myInterceptor', function ($q, $location) {
 		// 1. Maak een 'factory'-object
 		var interceptor = {};
 
@@ -11,7 +12,6 @@
 			// Request success
 			console.info('in interceptor request voor ' + config.url + ' : ', config);
 			// Doe aanvullende dingen...
-
 			// Zet een AUth header config.headers('myauth', 'xxx-1224')
 			// Return the config or wrap it in a promise if blank.
 			// Toon Loading indicator
@@ -59,7 +59,8 @@
 	//
 	// De tweede factory op deze app, de oorspronkelijke bookFactory (om boekgegevens op te halen)
 	//
-	app.factory('bookFactory', function ($http) {
+	angular.module('myApp')
+		.factory('bookFactory', function ($http) {
 		// 1. Maak een 'factory'-object
 		var factory = {};
 
@@ -86,4 +87,4 @@
 		// 4. Altijd tot slot: retourneer het factory-object
 		return factory;
 	});
-})(angular.module('myApp'));
+})();
