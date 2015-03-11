@@ -1,4 +1,4 @@
-﻿<html data-ng-app="">
+﻿<html ng-app="myApp">
 <head>
 	<title>Angular JS Template</title>
 	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
@@ -82,6 +82,9 @@
 
 	<!-- Custom scripts -->
 	<script>
+        angular.module('myApp', [])
+                .controller('clickController', clickController)
+
 		// some (random) examples
 		function clickController($scope) {
 			// Variables on this controller/scope
