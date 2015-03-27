@@ -15,11 +15,11 @@
 		};
 
 		// 2. Functies om success te onderscheppen
-		interceptor.response = function (config) {
+		interceptor.response = function (response) {
 			// broadcast custom event, stuur config.url mee als data
 			$rootScope.$broadcast('my-custom-event-ready', config.data)
 			// Return the config or wrap it in a promise if blank.
-			return config|| $q.when(config);
+			return response|| $q.when(response);
 		};
 
 		// 4. Return factory object

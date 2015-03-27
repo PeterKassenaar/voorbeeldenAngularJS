@@ -18,12 +18,12 @@
 			return config || $q.when(config);
 		};
 
-		interceptor.response = function (config) {
+		interceptor.response = function (response) {
 			// Response success
 			console.log('in interceptor response: ', config);
 			// ... doe aanvullende dingen, bijvoorbeeld op basis van response.status == 401 (Unauthorized)
 			// Verberg loading indicator
-			return config || $q.when(config);
+			return response || $q.when(response);
 		};
 
 		// 3. Functies om de Errors af te handelen.
