@@ -17,3 +17,4 @@ http://www.filltext.com/ - random user data
 http://omdbapi.com/ - Open Movie Database
 https://api.github.com/users/ - GitHub user information.
 http://dev.markitondemand.com/Api/v2/Quote?symbol=AAPL  - Aandelen/stock quote information
+http://pokeapi.co/ - The Pokémon RESTful API
