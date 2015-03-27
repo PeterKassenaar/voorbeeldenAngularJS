@@ -2,7 +2,7 @@
 	//
 	// Eerste factory/service op deze app, de Interceptor (om XHR-requests te onderscheppen)
 	//
-	app.factory('myInterceptor', function ($q, $rootScope) {
+	app.factory('myInterceptor', function ($rootScope) {
 		// 1. Maak een 'factory'-object
 		var interceptor = {};
 
@@ -11,7 +11,7 @@
 			// broadcast custom event, stuur config.url mee als data
 			$rootScope.$broadcast('my-custom-event', config.url)
 			// Return the config or wrap it in a promise if blank.
-			return config|| $q.when(config);
+			return config;
 		};
 
 		// 2. Functies om success te onderscheppen
@@ -19,7 +19,7 @@
 			// broadcast custom event, stuur config.url mee als data
 			$rootScope.$broadcast('my-custom-event-ready', config.data)
 			// Return the config or wrap it in a promise if blank.
-			return response|| $q.when(response);
+			return response;
 		};
 
 		// 4. Return factory object

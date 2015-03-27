@@ -3,7 +3,7 @@
 	// Eerste factory/service op deze app, de Interceptor (om XHR-requests te onderscheppen)
 	//
 	angular.module('myApp')
-		.factory('myInterceptor', function ($q, $location) {
+		.factory('myInterceptor', function ($location) {
 		// 1. Maak een 'factory'-object
 		var interceptor = {};
 
@@ -13,9 +13,8 @@
 			console.info('in interceptor request voor ' + config.url + ' : ', config);
 			// Doe aanvullende dingen...
 			// Zet een AUth header config.headers('myauth', 'xxx-1224')
-			// Return the config or wrap it in a promise if blank.
 			// Toon Loading indicator
-			return config || $q.when(config);
+			return config;
 		};
 
 		interceptor.response = function (response) {
@@ -23,7 +22,7 @@
 			console.log('in interceptor response: ', config);
 			// ... doe aanvullende dingen, bijvoorbeeld op basis van response.status == 401 (Unauthorized)
 			// Verberg loading indicator
-			return response || $q.when(response);
+			return response ;
 		};
 
 		// 3. Functies om de Errors af te handelen.
@@ -31,12 +30,11 @@
 		    console.log('in interceptor requestError: ', rejection); // Contains the data about the error on the request.
 		    // Return the promise rejection.
 			// Verberg loading indicator
-		    return $q.reject(rejection);
+		    return rejection;
 		};
 
 		interceptor.responseError = function (rejection) {
 		    console.log('in interceptor responseError', rejection); // Contains the data about the error on the response.
-		    // Return the promise rejection.
 		    // bijvoorbeeld: 404, not found:
 
 			// Verberg loading indicator
@@ -49,7 +47,7 @@
 		    	$location.path('views/401.html'); // of gebruik Angular $location() object.
 		    	return;
 		    }
-		    return $q.reject(rejection);
+		    return rejection;
 		};
 
 		// 4. Return factory object
