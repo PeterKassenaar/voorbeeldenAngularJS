@@ -19,7 +19,7 @@
 
 		interceptor.response = function (response) {
 			// Response success
-			console.log('in interceptor response: ', config);
+			console.log('in interceptor response: ', response);
 			// ... doe aanvullende dingen, bijvoorbeeld op basis van response.status == 401 (Unauthorized)
 			// Verberg loading indicator
 			return response ;
