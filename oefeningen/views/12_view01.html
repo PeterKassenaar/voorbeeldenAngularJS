@@ -1,0 +1,10 @@
+﻿<div ng-controller="bookController">
+	<h1>12 - Boeken met detailpagina's met $http</h1>
+
+	<div class="book" ng-repeat="book in books| orderBy:'name'">
+		<p class="bookTitle">{{ book.title }} </p>
+		<p class="bookAuthor">{{book.firstAuthorName}}</p>
+		<a href="#/detail/{{book.ean}}" class="btn btn-primary ">Details</a>
+	</div>
+</div>
+

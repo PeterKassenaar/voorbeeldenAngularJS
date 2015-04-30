@@ -1,0 +1,12 @@
+﻿<div ng-controller="bookController">
+	<h1>13 - Interceptor</h1>
+	<h2>Event: {{ eventData }}</h2>
+	<div class="book" ng-repeat="book in books| orderBy:'name'">
+		<p class="bookTitle">{{ book.title }} </p>
+		<p class="bookAuthor">{{book.firstAuthorName}}</p>
+		<a href="#/detail/{{book.ean}}" class="btn btn-primary ">Details</a>
+	</div>
+	<br clear="all" />
+	<h2>Event gereed: {{ eventReadyData | json }}</h2>
+</div>
+

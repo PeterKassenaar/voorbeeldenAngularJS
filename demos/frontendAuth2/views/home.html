@@ -1,0 +1,20 @@
+﻿<div>
+
+	<h1>Home</h1>
+	<h2>{{ message }}</h2>
+	<p>
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit in malesuada
+		semper mi, id sollicitudin urna fermentum ut fusce varius nisl ac ipsum gravida vel pretium tellus.
+	</p>
+	<ul>
+		<li>
+			<a href="#/secret">Secret page - authentication required</a>
+		</li>
+		<li>
+			<a href="#/login">Login page </a>
+		</li>
+	</ul>
+	<div ng-if="currentUser">
+		<button class="btn btn-info" ng-click="logout()">Logout</button>
+	</div>
+</div>

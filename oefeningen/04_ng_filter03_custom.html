@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title>Angular JS Template</title>
+	<link href="css/bootstrap.css" rel="stylesheet" />
+	<link href="css/styles.css" rel="stylesheet" />
+</head>
+<body>
+	<div class="container" ng-controller="myController">
+		<!-- Insert UI here -->
+		<!--<h1>{{ myDataBindingVariable | myFilterName }}</h1>-->
+		<h1>Filter sanitize: {{ customString | sanitize}}</h1>
+		<h1>Filter capitalize : {{ customString | capitalize}}</h1>
+
+		<h2> filter parameter {{ customString | parameterFilter }}</h2>
+
+	</div>
+	<!-- ***************-->
+	<!-- Vendor scripts -->
+	<!-- ***************-->
+	<script src="js/vendor/angular/angular.min.js"></script>
+
+	<!-- Custom scripts -->
+	<script>
+		// Filter standard layout
+//		angular.module('myApp').filter('myFilterName', function () {
+//			return function (input) {
+//				// doe iets met 'input', afhankelijk van filterfunctionaliteit
+//				return input;
+//			}
+//		});
+
+
+
+		angular.module('myApp', [])
+			.controller('myController', function ($scope) {
+				$scope.customString = 'Hallo Wereld, hoe gaat het er mee';
+			})
+		.filter('sanitize', function () {
+			// Transformeer de spaties in string naar dashes (-),
+			// bijvoorbeeld voor meer SEO-vriendelijke URL's
+			return function (input) {
+				var sanitizedString;
+				if (input !== '') {
+					sanitizedString = input.split(' ').join('_');
+				}
+				return sanitizedString;
+			};
+		})
+		.filter('capitalize', function () {
+			// Maak de eerste letter van elk woord in een string een hoofdletter.
+			return function (input) {
+				if (input) {
+					var inputArr = input.split(' ');
+					for (var i = 0; i < inputArr.length; i++) {
+						inputArr[i] = inputArr[i][0].toUpperCase() + inputArr[i].slice(1);
+					}
+					return inputArr.join(' ');
+				}
+			}
+		})
+		.filter('parameterFilter', function () {
+			return function (input, parameter) {
+				console.log('input : ', input, 'parameter: ', parameter);
+				if (parameter) {
+					// Indien aanwezig: bewerk op basis van parameter
+                    if(parameter[0]==='+'){
+                        return input.toUpperCase();
+                    }
+                    else if(parameter[0]==='-'){
+                        return input.toLowerCase();
+                    }
+				}
+                return input +' (niet aangepast)';
+			}
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title>Angular Translate</title>
+	<meta charset="utf-8" />
+</head>
+<body ng-controller="translateController">
+	<h1>{{ 'lblHeadline' | translate }}</h1>
+	<div>{{ 'lblIntroText' | translate }}</div>
+	<div>
+		<button ng-click="setLanguage('en')">{{ 'btnText_EN' | translate }}</button>
+		<button ng-click="setLanguage('nl')">{{ 'btnText_NL' | translate }}</button>
+	</div>
+	<hr />
+	<div>En zo valt er nog wel meer te vertellen...</div>
+	<!-- Vendor Script -->
+	<script src="bower_components/angular/angular.min.js"></script>
+	<script src="bower_components/angular-translate/angular-translate.min.js"></script>
+	<!-- Custom script-->
+	<script>
+		// 1. voeg de translator toe als dependency
+		var app = angular.module('myApp', ['pascalprecht.translate']);
+		console.log('Hello World - ready to translate');
+
+		// 2 configureer de app en stel diverse talen in.
+		app.config(function ($translateProvider) {
+			console.info(' in $translateProvider');
+			// 2a. Engels
+			$translateProvider.translations('en', {
+				lblHeadline: 'This weekend SALE on all our shops',
+				lblIntroText: 'Starting friday 8am, all our shops offer great discounts on various products.',
+				btnText_EN: 'English',
+				btnText_NL: 'Dutch',
+			})
+			// 2b. Nederlands
+			.translations('nl', {
+				lblHeadline: 'Dit weekend UITVERKOOP in al onze winkels',
+				lblIntroText: 'Vanaf vrijdag 8 uur bieden al onze winkels flinke kortingen op een groot aantal producten.',
+				btnText_EN: 'Engels',
+				btnText_NL: 'Nederlands'
+			});
+			// 3. Stel de voorkeurstaal in.
+			$translateProvider.preferredLanguage('en');
+		});
+
+		// Controller
+		app.controller('translateController', function ($scope, $translate) {
+			$scope.setLanguage = function (language) {
+				$translate.use(language);
+			};
+		});
+	</script>
+</body>
+</html>

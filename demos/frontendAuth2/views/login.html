@@ -1,0 +1,26 @@
+﻿<div>
+	<style>
+
+		.form-signin {
+			max-width:400px;
+			margin: 0 auto;
+		}
+	</style>
+	<form class="form-signin" role="form" ng-submit="login(credentials)">
+		<h2>Please log in</h2>
+		<p>
+			<input ng-model="credentials.username"
+				   type="text" name="user" class="form-control" placeholder="E-mailadres of gebruikersnaam" required autofocus />
+		</p>
+		<p>
+			<input ng-model="credentials.password"
+				   type="password" name="pass" class="form-control" placeholder="Wachtwoord" required />
+		</p>
+		<label class="checkbox">
+			<input type="checkbox" value="rememberMe"> Remember me (To be implemented - use localStorage)
+		</label>
+		<button class="btn btn-lg btn-primary btn-block">Login</button>
+	</form>
+
+
+</div>

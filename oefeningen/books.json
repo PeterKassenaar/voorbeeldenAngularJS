@@ -1,0 +1,554 @@
+[
+  {
+    "bookID": 3061,
+    "ean": "9789025755621",
+    "title": "Haan schiet mis",
+    "firstAuthorName": "Rian Visser e.a.",
+    "firstAuthorID": 2654,
+    "authorName": "Rian Visser, Caroline van Pelt",
+    "authorNames": [
+      {
+        "authorName": "Rian Visser",
+        "authorID": 2654
+      },
+      {
+        "authorName": "Caroline van Pelt",
+        "authorID": 2657
+      }
+    ],
+    "credits": 299.0,
+    "description": "Haan schiet mis",
+    "isBookOnShelf": false,
+    "offSet": 0,
+    "numPages": 20,
+    "publisherID": 47,
+    "publisherName": "Gottmer Uitgeversgroep",
+    "serieID": 264,
+    "serieName": "Haan, kip en hoen",
+    "numBookPrices": 0,
+    "languageID": 1,
+    "isInSubscription": true,
+    "priceInEuro": "€ 2,99",
+    "availablePageRange": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "freePageRange": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "orientation": "unknown",
+    "width": -1,
+    "height": -1,
+    "isFavorite": false,
+    "lastPageRead": -1,
+    "isAvailable": false,
+    "modifiedOn": "2013-10-21T00:00:00",
+    "hasToc": false,
+    "ageIndicator": "-1"
+  },
+  {
+    "bookID": 3050,
+    "ean": "9789025755515",
+    "title": "Pier naar het feest",
+    "firstAuthorName": "Rian Visser e.a.",
+    "firstAuthorID": 2654,
+    "authorName": "Rian Visser, Leo Timmers",
+    "authorNames": [
+      {
+        "authorName": "Rian Visser",
+        "authorID": 2654
+      },
+      {
+        "authorName": "Leo Timmers",
+        "authorID": 2655
+      }
+    ],
+    "credits": 299.0,
+    "description": "Pier naar het feest",
+    "isBookOnShelf": false,
+    "offSet": 0,
+    "numPages": 20,
+    "publisherID": 47,
+    "publisherName": "Gottmer Uitgeversgroep",
+    "serieID": 262,
+    "serieName": "Hier is Pier",
+    "numBookPrices": 0,
+    "languageID": 1,
+    "isInSubscription": true,
+    "priceInEuro": "€ 2,99",
+    "availablePageRange": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "freePageRange": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "orientation": "unknown",
+    "width": -1,
+    "height": -1,
+    "isFavorite": false,
+    "lastPageRead": -1,
+    "isAvailable": false,
+    "modifiedOn": "2013-10-21T00:00:00",
+    "hasToc": false,
+    "ageIndicator": "-1"
+  },
+  {
+    "bookID": 3046,
+    "ean": "9789025747435",
+    "title": "Dikkie Dik Groen blokboekje",
+    "firstAuthorName": "Jet Boeke",
+    "firstAuthorID": 2652,
+    "authorName": "Jet Boeke",
+    "authorNames": [
+      {
+        "authorName": "Jet Boeke",
+        "authorID": 2652
+      }
+    ],
+    "credits": 995.0,
+    "description": "Dikkie Dik Groen blokboekje",
+    "isBookOnShelf": false,
+    "offSet": 0,
+    "numPages": 24,
+    "publisherID": 47,
+    "publisherName": "Gottmer Uitgeversgroep",
+    "serieID": 169,
+    "serieName": "Gottmer Uitgeversgroep",
+    "numBookPrices": 0,
+    "languageID": 1,
+    "isInSubscription": true,
+    "priceInEuro": "€ 9,95",
+    "availablePageRange": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "freePageRange": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "orientation": "unknown",
+    "width": -1,
+    "height": -1,
+    "isFavorite": false,
+    "lastPageRead": -1,
+    "isAvailable": false,
+    "modifiedOn": "2013-10-21T00:00:00",
+    "hasToc": true,
+    "ageIndicator": "-1"
+  },
+  {
+    "bookID": 3045,
+    "ean": "9789025747428",
+    "title": "Dikkie Dik Blauw blokboekje",
+    "firstAuthorName": "Jet Boeke",
+    "firstAuthorID": 2652,
+    "authorName": "Jet Boeke",
+    "authorNames": [
+      {
+        "authorName": "Jet Boeke",
+        "authorID": 2652
+      }
+    ],
+    "credits": 995.0,
+    "description": "Dikkie Dik Blauw blokboekje",
+    "isBookOnShelf": false,
+    "offSet": 0,
+    "numPages": 24,
+    "publisherID": 47,
+    "publisherName": "Gottmer Uitgeversgroep",
+    "serieID": 169,
+    "serieName": "Gottmer Uitgeversgroep",
+    "numBookPrices": 0,
+    "languageID": 1,
+    "isInSubscription": true,
+    "priceInEuro": "€ 9,95",
+    "availablePageRange": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "freePageRange": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "orientation": "unknown",
+    "width": -1,
+    "height": -1,
+    "isFavorite": false,
+    "lastPageRead": -1,
+    "isAvailable": false,
+    "modifiedOn": "2013-10-21T00:00:00",
+    "hasToc": true,
+    "ageIndicator": "-1"
+  },
+  {
+    "bookID": 3070,
+    "ean": "9789025755713",
+    "title": "Aap en het maandier",
+    "firstAuthorName": "Rian Visser e.a.",
+    "firstAuthorID": 2654,
+    "authorName": "Rian Visser, Heleen Brulot",
+    "authorNames": [
+      {
+        "authorName": "Rian Visser",
+        "authorID": 2654
+      },
+      {
+        "authorName": "Heleen Brulot",
+        "authorID": 2658
+      }
+    ],
+    "credits": 299.0,
+    "description": "Aap en het maandier",
+    "isBookOnShelf": false,
+    "offSet": 0,
+    "numPages": 20,
+    "publisherID": 47,
+    "publisherName": "Gottmer Uitgeversgroep",
+    "serieID": 265,
+    "serieName": "Daar komt aap",
+    "numBookPrices": 0,
+    "languageID": 1,
+    "isInSubscription": true,
+    "priceInEuro": "€ 2,99",
+    "availablePageRange": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "freePageRange": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "orientation": "unknown",
+    "width": -1,
+    "height": -1,
+    "isFavorite": false,
+    "lastPageRead": -1,
+    "isAvailable": false,
+    "modifiedOn": "2013-10-20T18:05:53.267",
+    "hasToc": false,
+    "ageIndicator": "-1"
+  },
+  {
+    "bookID": 3069,
+    "ean": "9789025755706",
+    "title": "Aap zoekt een klik",
+    "firstAuthorName": "Rian Visser e.a.",
+    "firstAuthorID": 2654,
+    "authorName": "Rian Visser, Heleen Brulot",
+    "authorNames": [
+      {
+        "authorName": "Rian Visser",
+        "authorID": 2654
+      },
+      {
+        "authorName": "Heleen Brulot",
+        "authorID": 2658
+      }
+    ],
+    "credits": 299.0,
+    "description": "Aap zoekt een klik",
+    "isBookOnShelf": false,
+    "offSet": 0,
+    "numPages": 20,
+    "publisherID": 47,
+    "publisherName": "Gottmer Uitgeversgroep",
+    "serieID": 265,
+    "serieName": "Daar komt aap",
+    "numBookPrices": 0,
+    "languageID": 1,
+    "isInSubscription": true,
+    "priceInEuro": "€ 2,99",
+    "availablePageRange": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "freePageRange": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "orientation": "unknown",
+    "width": -1,
+    "height": -1,
+    "isFavorite": false,
+    "lastPageRead": -1,
+    "isAvailable": false,
+    "modifiedOn": "2013-10-20T18:05:52.827",
+    "hasToc": false,
+    "ageIndicator": "-1"
+  },
+  {
+    "bookID": 3068,
+    "ean": "9789025755690",
+    "title": "Goud voor Aap",
+    "firstAuthorName": "Rian Visser e.a.",
+    "firstAuthorID": 2654,
+    "authorName": "Rian Visser, Heleen Brulot",
+    "authorNames": [
+      {
+        "authorName": "Rian Visser",
+        "authorID": 2654
+      },
+      {
+        "authorName": "Heleen Brulot",
+        "authorID": 2658
+      }
+    ],
+    "credits": 299.0,
+    "description": "Goud voor Aap",
+    "isBookOnShelf": false,
+    "offSet": 0,
+    "numPages": 20,
+    "publisherID": 47,
+    "publisherName": "Gottmer Uitgeversgroep",
+    "serieID": 265,
+    "serieName": "Daar komt aap",
+    "numBookPrices": 0,
+    "languageID": 1,
+    "isInSubscription": true,
+    "priceInEuro": "€ 2,99",
+    "availablePageRange": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "freePageRange": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "orientation": "unknown",
+    "width": -1,
+    "height": -1,
+    "isFavorite": false,
+    "lastPageRead": -1,
+    "isAvailable": false,
+    "modifiedOn": "2013-10-20T18:05:52.437",
+    "hasToc": false,
+    "ageIndicator": "-1"
+  },
+  {
+    "bookID": 3067,
+    "ean": "9789025755683",
+    "title": "Aap naar de stad",
+    "firstAuthorName": "Rian Visser e.a.",
+    "firstAuthorID": 2654,
+    "authorName": "Rian Visser, Heleen Brulot",
+    "authorNames": [
+      {
+        "authorName": "Rian Visser",
+        "authorID": 2654
+      },
+      {
+        "authorName": "Heleen Brulot",
+        "authorID": 2658
+      }
+    ],
+    "credits": 299.0,
+    "description": "Aap naar de stad",
+    "isBookOnShelf": false,
+    "offSet": 0,
+    "numPages": 20,
+    "publisherID": 47,
+    "publisherName": "Gottmer Uitgeversgroep",
+    "serieID": 265,
+    "serieName": "Daar komt aap",
+    "numBookPrices": 0,
+    "languageID": 1,
+    "isInSubscription": true,
+    "priceInEuro": "€ 2,99",
+    "availablePageRange": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "freePageRange": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "orientation": "unknown",
+    "width": -1,
+    "height": -1,
+    "isFavorite": false,
+    "lastPageRead": -1,
+    "isAvailable": false,
+    "modifiedOn": "2013-10-20T18:05:52.11",
+    "hasToc": false,
+    "ageIndicator": "-1"
+  },
+  {
+    "bookID": 3066,
+    "ean": "9789025755676",
+    "title": "Aap in de mijn",
+    "firstAuthorName": "Rian Visser e.a.",
+    "firstAuthorID": 2654,
+    "authorName": "Rian Visser, Heleen Brulot",
+    "authorNames": [
+      {
+        "authorName": "Rian Visser",
+        "authorID": 2654
+      },
+      {
+        "authorName": "Heleen Brulot",
+        "authorID": 2658
+      }
+    ],
+    "credits": 299.0,
+    "description": "Aap in de mijn",
+    "isBookOnShelf": false,
+    "offSet": 0,
+    "numPages": 20,
+    "publisherID": 47,
+    "publisherName": "Gottmer Uitgeversgroep",
+    "serieID": 265,
+    "serieName": "Daar komt aap",
+    "numBookPrices": 0,
+    "languageID": 1,
+    "isInSubscription": true,
+    "priceInEuro": "€ 2,99",
+    "availablePageRange": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "freePageRange": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "orientation": "unknown",
+    "width": -1,
+    "height": -1,
+    "isFavorite": false,
+    "lastPageRead": -1,
+    "isAvailable": false,
+    "modifiedOn": "2013-10-20T18:05:51.843",
+    "hasToc": false,
+    "ageIndicator": "-1"
+  },
+  {
+    "bookID": 3065,
+    "ean": "9789025755669",
+    "title": "Aap wil een baan",
+    "firstAuthorName": "Rian Visser e.a.",
+    "firstAuthorID": 2654,
+    "authorName": "Rian Visser, Heleen Brulot",
+    "authorNames": [
+      {
+        "authorName": "Rian Visser",
+        "authorID": 2654
+      },
+      {
+        "authorName": "Heleen Brulot",
+        "authorID": 2658
+      }
+    ],
+    "credits": 299.0,
+    "description": "Aap wil een baan",
+    "isBookOnShelf": false,
+    "offSet": 0,
+    "numPages": 20,
+    "publisherID": 47,
+    "publisherName": "Gottmer Uitgeversgroep",
+    "serieID": 265,
+    "serieName": "Daar komt aap",
+    "numBookPrices": 0,
+    "languageID": 1,
+    "isInSubscription": true,
+    "priceInEuro": "€ 2,99",
+    "availablePageRange": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "freePageRange": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "orientation": "unknown",
+    "width": -1,
+    "height": -1,
+    "isFavorite": false,
+    "lastPageRead": -1,
+    "isAvailable": false,
+    "modifiedOn": "2013-10-20T18:05:51.547",
+    "hasToc": false,
+    "ageIndicator": "-1"
+  }
+]

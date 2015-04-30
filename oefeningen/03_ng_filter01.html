@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html ng-app="">
+<head>
+    <title>Angular JS Template</title>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+</head>
+<body>
+    <!-- De data wordt hier hardcoded even in een array names[] geplaatst. Er wordt met ng-repeat overheen geloopt. -->
+    <div class="container" ng-init="names=['John', 'Bob', 'Bart' ,'Sandra', 'Harry', 'Peter', 'Michiel', 'Jeroen', 'Irene', 'Mike']">
+        <h1>03- Simple Filtering</h1>
+
+        <input type="text" value="" ng-model="name" class="input-lg" placeholder="typ je naam..." />
+        <ul>
+            <!-- met | wordt de resultaatset gefilterd volgens het aangegeven filter. Hier: hoofdletters (uppercase)-->
+            <li ng-repeat="firstName in names | filter:name"> {{ firstName | uppercase }}</li>
+        </ul>
+
+    </div>
+    <script src="js/vendor/angular/angular.min.js"></script>
+</body>
+</html>

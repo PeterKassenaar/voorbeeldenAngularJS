@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<!-- 1. Definieer een modulenaam in HTML -->
+<html ng-app="myApp">
+<head>
+	<title>Angular JS Template</title>
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+	<link href="css/bootstrap.css" rel="stylesheet"/>
+	<link href="css/styles.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container" ng-controller="personController">
+	<h1>07 - Modules &amp; Controllers</h1>
+
+	<input type="text" value="" ng-model="filterName" class="input-lg" placeholder="typ je naam..."/>
+	<ul>
+		<li ng-repeat="person in persons | orderBy:'name' | filter: filterName">{{ person.name | uppercase }}</li>
+	</ul>
+
+	<!-- Dit is een controller die in de HelperModule wordt gedefinieerd-->
+	<div ng-controller="alertController">
+		<button ng-click="clickMe()">Hello World</button>
+	</div>
+
+</div>
+
+
+<!-- Scripts below here -->
+<script src="js/vendor/angular/angular.min.js"></script>
+<script src="js/mijnHelper.js"></script>
+<script>
+
+	// 2. Maak een JavaScript-variabele met de hoofdmodule voor deze app
+	// en Angular-module op basis van de HTML-directive.
+	// De HelperModule wordt geinjecteerd binnen [...]
+	var app = angular.module('myApp', ['mijnHelper']);
+
+	// 3. Voeg een controller toe aan de de module.
+	app.controller('personController', function ($scope) {
+		$scope.persons = [{'name': 'John'},
+			{'name': 'Bob'},
+			{'name': 'Bart'},
+			{'name': 'Sandra'},
+			{'name': 'Harry'},
+			{'name': 'Peter'},
+			{'name': 'Michiel'},
+			{'name': 'Jeroen'},
+			{'name': 'Irene'},
+			{'name': 'Mike'}];
+	});
+</script>
+</body>
+</html>

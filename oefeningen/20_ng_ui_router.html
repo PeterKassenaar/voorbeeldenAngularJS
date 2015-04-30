@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title>Angular JS Template</title>
+	<link href="css/bootstrap.css" rel="stylesheet" />
+	<link href="css/styles.css" rel="stylesheet" />
+	<style>
+
+		.active {
+			background-color: #0026ff;
+			color: #fff;
+		}
+	</style>
+
+</head>
+<body>
+	<div class="container">
+		<!-- Insert UI here -->
+		<h1>
+			UI-router
+		</h1>
+		<div class="row">
+			<div class="ui-view"></div>
+			<a ui-sref="state1" ui-sref-active="active">State 1</a>
+			<a ui-sref="state2" ui-sref-active="active">State 2</a>
+
+		</div>
+	</div>
+	<!-- ***************-->
+	<!-- Vendor scripts -->
+	<!-- ***************-->
+	<script src="js/vendor/angular/angular.min.js"></script>
+	<script src="js/vendor/angular/angular-ui-router.min.js"></script>
+	<!-- Custom scripts -->
+	<script>
+		var app = angular.module('myApp', ['ui.router']);
+
+		app.config(function ($stateProvider, $urlRouterProvider) {
+			// direct de 'otherwise' declareren
+			$urlRouterProvider.otherwise('/state1');
+
+			// 'echte' routes
+			$stateProvider.state('state1', {
+				url: 'state1',
+				templateUrl: '/views/ui-router/state1.html'
+			})
+			.state('state1.list', {
+				url: '/list',
+				templateUrl: 'views/ui-router/state1.list.html',
+				controller: function ($scope) {
+					$scope.items = ['item 1', 'item 2', 'item 3'];
+				}
+			})
+			.state('state2', {
+				url: 'state2',
+				templateUrl:'/views/ui-router/state2.html'
+			})
+			.state('state2.list', {
+				url: '/list',
+				templateUrl: 'views/ui-router/state2.list.html',
+				controller: function ($scope) {
+					$scope.things = ['Thing 1', 'Thing 2', 'Thing 3'];
+				}
+			});
+		});
+	</script>
+</body>
+</html>

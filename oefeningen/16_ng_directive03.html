@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title>Angular JS - Passing data into a directive</title>
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+	<link href="css/bootstrap.css" rel="stylesheet" />
+	<link href="css/styles.css" rel="stylesheet" />
+	<style>
+		
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>Passing data into a directive</h1>
+		<!-- custom directive -->
+		<div my-link my-url="http://www.google.com" my-text="Ga naar Google"></div>		
+	</div>
+	<!-- ***************-->
+	<!-- Vendor scripts -->
+	<!-- ***************-->
+	<script src="js/vendor/angular/angular.min.js"></script>
+
+	<!-- Custom scripts -->
+	<script>
+		// Writing a custom 'myLink' directive
+		var app = angular.module('myApp', [])
+
+		// Define our directive
+		app.directive('myLink', function () {
+			return {
+				template: '<a href="{{ myUrl }}">{{ myText }}</a>',
+				restrict: 'A',
+				// nieuw: isolated scope voor deze directive
+				scope: {
+					myUrl: '@',
+					myText: '@'
+				}
+			}
+
+		});
+
+
+	</script>
+</body>
+</html>

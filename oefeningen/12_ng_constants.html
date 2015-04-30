@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<!-- Voor het overzicht staat alle code in 1 bestand (ideaal: uit-refactoren naar diverse .js-bestanden) -->
+<html ng-app="myApp">
+<head>
+	<title>Angular JS Template</title>
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+	<link href="css/bootstrap.css" rel="stylesheet"/>
+	<link href="css/styles.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container" ng-controller="myController">
+	<h1>{{ appName }} </h1>
+
+	<div>
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit
+		in malesuada semper mi, id sollicitudin urna fermentum ut fusce varius nisl ac ipsum gravida vel pretium tellus.
+	</div>
+	<div>
+		<button class="btn btn-primary">{{ lblLogin }}</button>
+
+	</div>
+	<h2>{{ key }} </h2>
+</div>
+<!-- Scripts below here -->
+<script src="js/vendor/angular/angular.min.js"></script>
+<script src="js/vendor/angular/angular-resource.min.js"></script>
+
+<!-- Custom Scripts -->
+<script>
+	// 1. Definieer de app
+	var app = angular.module('myApp', []);
+
+	// 2. Definieer de constanten binnen die app. Idealiter komen deze natuurlijk in een apart .js-bestand.
+	app.constant('GLOBALS', {
+		appName       : 'Mijn Super app!',
+		appVersion    : '1.0.0',
+		db            : window.localStorage, 		// alias naar localStorage / lokale Database
+		resources     : {
+			lblLoggedOn : 'Afmelden',
+			lblLoggedOff: 'Aanmelden'
+		},
+		errorMsg      : 'FOUT: Er is een error opgetreden',
+		callbackString: '?callback=JSON_CALLBACK',
+		urlWeather    : 'http://api.openweathermap.org/data/2.5/weather?q=',
+		urlYindo      : 'http://api.yindo.com/api/book/new/10'
+		// meer constant properties...
+	});
+
+	// Enkelvoudige waarden met app.value()
+	app.value('mijnKey', 'Hello World');
+	//app.value('mijnKey2', ['x', 'y']);
+	//    app.value('mijnKey3',
+	//      { naam: 'Ronald De Boer',
+	//        plaats: 'Zoetermeer' }
+	//    );
+
+	// 3. Injecteer en gebruik de constanten uit de module GLOBALS
+	app.controller('myController', function ($scope, GLOBALS) {
+		$scope.appName = GLOBALS.appName;
+		$scope.lblLogin = GLOBALS.isLoggedIn
+				? GLOBALS.resources.lblLoggedOn
+				: GLOBALS.resources.lblLoggedOff;
+		// $scope.key = mijnKey;
+	});
+
+
+</script>
+</body>
+
+</html>
