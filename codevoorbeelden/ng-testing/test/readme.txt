@@ -1,1 +1,0 @@
-Bij een complete, geautomatiseerde setup met Karma Test Runner komen in deze map de test-specifications en Karma-configuration files. Ze staan volledig los van de app-map. Zie eventueel http://www.tuesdaydeveloper.com/2013/06/angularjs-testing-with-karma-and-jasmine/ voor meer voorbeelden en informatie. ^PK.
