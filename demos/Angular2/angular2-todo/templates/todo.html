@@ -1,0 +1,54 @@
+<style>
+    @import url(http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css);
+    @import url(http://fonts.googleapis.com/css?family=Open+Sans);
+</style>
+
+<style>
+    .container {
+        font-family : 'Open Sans', sans-serif;
+    }
+
+    .done {
+        text-decoration : line-through;
+        color           : #999999;
+    }
+
+    /*.container {*/
+    /*margin-top : 200px;*/
+    /*}*/
+
+    /*.bottom-offset {*/
+    /*margin-bottom : 20px;*/
+    /*}*/
+</style>
+
+<div class="container">
+
+    <h1>Peter's TODO-app</h1>
+
+
+    <label for="txtTodo">TODO:</label>
+    <input type="text" id="txtTodo" class="form-control" placeholder="Wat staat er op het programma?..." autofocus
+           #newtodo
+           (keyup)="add($event,newtodo)"/>
+    <h3>Item:</h3>
+    <ul class="list-group">
+        <li *foreach="#todo in todoStore.todoList"
+            class="list-group-item">
+            <input type="checkbox"
+                   [checked]="todo.done"
+                   (click)="toggleTodoState(todo)"/>
+        <span [class.done]="todo.done">
+            {{todo.text}}</span>
+            <a (click)="removeTodo(todo)" [hidden]="todo.done">Verwijderen</a>
+        </li>
+    </ul>
+
+
+    <hr/>
+    <button (click)="credits()" class="btn btn-lg btn-primary">About/Credits</button>
+    <br/>
+    <a href="http://www.htmlxprs.com/post/54/creating-a-super-simple-todo-app-using-angular-2-tutorial" target="_blank">Visit
+        site:
+        HTML Xperts</a>
+</div>
