@@ -17,7 +17,7 @@
 		// 2. Functies om success te onderscheppen
 		interceptor.response = function (response) {
 			// broadcast custom event, stuur config.url mee als data
-			$rootScope.$broadcast('my-custom-event-ready', config.data)
+			$rootScope.$broadcast('my-custom-event-ready', response.data)
 			// Return the config or wrap it in a promise if blank.
 			return response;
 		};
