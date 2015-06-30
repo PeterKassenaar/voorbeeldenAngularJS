@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="cacheApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Demo TemplateCache-app</title>
+    <link rel="stylesheet" href="js/vendor/bootstrap/dist/css/bootstrap.min.css"/>
+</head>
+<body>
+<div class="container">
+    <h1>Template cache-app</h1>
+
+    <div ng-view></div>
+    <hr/>
+    <div><strong>Stap 2: Zie broncode</strong>:
+        De template is nu als inline template (met dezelfde naam!) gedefinieerd.
+        De router zal eerst in $templateCache kijken of daar een element met die naam
+        aanwezig is, alvorens een XHR-call te doen.
+        - zie DevTools broncode.
+    </div>
+
+    <p><a href="index.html"><< Naar index.html</a> |
+        <a href="index3.html">Naar index3.html >></a></p>
+
+    <!-- Templates -->
+    <script type="text/ng-template" id="views/testView.html">
+        <div style="background-color: #8ec2bf">
+            <h3>Dit is een inline template in de $templateCache!</h3>
+            Hello {{ test.user.name }}!
+        </div>
+    </script>
+
+    <!-- Kern van dit alles: hier is <script> eigenlijk een *directive* en geen html-tag!.
+        Angular herkent dit, en zal scripts met type text/ng-template upfront laden in de templateCache.
+        Er wordt eerst gekeken in $templateCache, daarna pas wordt een XHR-call gedaan. -->
+
+    <!-- Zwak punt in deze benadering : alle templates moeten inline worden gedefinieerd. Niet wenselijk -->
+</div>
+<!--Vendor scripts-->
+<script src="js/vendor/angular/angular.min.js"></script>
+<script src="js/vendor/angular-route/angular-route.min.js"></script>
+<!--Custom scripts-->
+<script src="js/app2.js"></script>
+</body>
+</html>

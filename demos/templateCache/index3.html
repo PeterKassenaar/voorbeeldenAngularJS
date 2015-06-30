@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="cacheApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Demo TemplateCache-app</title>
+    <link rel="stylesheet" href="js/vendor/bootstrap/dist/css/bootstrap.min.css"/>
+</head>
+<body>
+<div class="container">
+    <h1>Template cache-app</h1>
+
+    <div ng-view></div>
+    <hr/>
+    <div><strong>Stap 3: Zie broncode</strong>:
+        De inline template is nu weer verwijderd. De templates worden
+        pre-populated geladen in de $templateCache. Dit gebeurd in het
+        run-block van een applicatie (er mogen zoveel .run()-blokken zijn als
+        nodig is).
+    </div>
+
+    <p><a href="index2.html"><< Naar index2.html</a> |
+    </p>
+
+
+</div>
+<!--Vendor scripts-->
+<script src="js/vendor/angular/angular.min.js"></script>
+<script src="js/vendor/angular-route/angular-route.min.js"></script>
+<!--Custom scripts-->
+<script src="js/app3.js"></script>
+</body>
+</html>
