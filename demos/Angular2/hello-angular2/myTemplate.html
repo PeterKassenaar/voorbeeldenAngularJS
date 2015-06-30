@@ -1,0 +1,5 @@
+<h1>Welkom {{ name}}</h1><hr />
+<input type="checkbox"
+       (click)="setHidden()"/>
+<button (click)="clickMe()"
+        [hidden]="hidden">Click on me, {{ name }}</button>

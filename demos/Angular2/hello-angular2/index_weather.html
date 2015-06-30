@@ -1,0 +1,25 @@
+<html>
+<head>
+	<title>Angular 2 Weather application</title>
+	<script src="quickstart/dist/es6-shim.js"></script>
+</head>
+<body>
+
+<!--The weather app component created in app_weather.ts -->
+<weather-app></weather-app>
+
+<script>
+	// Rewrite the paths to load the files
+	System.paths = {
+		'angular2/*'   : 'quickstart/angular2/*.js', // Angular
+		'rtts_assert/*': 'quickstart/rtts_assert/*.js', //Runtime assertions
+		'weather'      : 'weather/weather.ts',
+		'app'          : 'app_weather.ts' // weather-app component
+	};
+
+	// Kick off the application
+	System.import('app');
+</script>
+
+</body>
+</html>

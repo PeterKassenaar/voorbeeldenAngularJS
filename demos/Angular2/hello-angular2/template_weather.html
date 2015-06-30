@@ -1,0 +1,5 @@
+<h1>Search weather using Angular2</h1>
+<input type="search" #city />
+<button (click)="searchWeather(city.value)">Search Weather</button>
+<hr/>
+Current weather in: {{ currentWeather.name }}, {{currentWeather.main.temp }} degrees Celcius.
