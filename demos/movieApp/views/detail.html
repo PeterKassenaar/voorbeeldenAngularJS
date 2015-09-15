@@ -1,0 +1,19 @@
+<div class="page-header">
+    <h1>Movie details</h1>
+</div>
+<div class="jumbotron">
+    <img ng-src="{{ vm.movie.Poster}}" class="movie-poster" style="float: right;" alt=""/>
+
+    <h1>{{ vm.movie.Title }} ({{ vm.movie.Year}})</h1>
+
+    <p>{{ vm.movie.Plot }}</p>
+
+    <h3>Actors</h3>
+    {{ vm.movie.Actors}}
+    <h3>Director</h3>
+    {{ vm.movie.Director }}
+
+</div>
+<p>
+    <a href="#/" class="btn btn-lg btn-default">Home</a>
+</p>

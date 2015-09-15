@@ -1,0 +1,29 @@
+<div class="jumbotron">
+    <img src="img/skyfall.jpg" class="movie-poster" style="float: right;" alt=""/>
+
+    <p>Search movies by title:</p>
+
+    <p>
+        <input type="text" ng-model="vm.keyword" class="input-lg" placeholder="movie title..."/>
+        <button class="btn btn-lg btn-primary"
+                ng-click="vm.searchMovies(vm.keyword)">Search</button>
+    </p>
+</div>
+<!-- /jumbotron -->
+<div>
+    <h2>Results</h2>
+    <ul class="list-group">
+        <li ng-repeat="movie in vm.movies" class="list-group-item">
+            <a ng-href="#/detail/{{ movie.imdbID}}">
+                {{ movie.Title}} ({{movie.Year}})
+            </a>
+        </li>
+        <li class="list-group-item" ng-show="!vm.movies">
+            No results yet...
+        </li>
+    </ul>
+    <button ng-click="vm.clearMovies()"
+            class="btn btn-danger btn-lg"
+            ng-show="vm.movies">Clear
+    </button>
+</div>

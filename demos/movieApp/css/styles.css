@@ -1,0 +1,12 @@
+.movie-poster {
+	max-width     : 140px;
+	padding       : 4px;
+	margin        : 16px;
+	border        : 1px solid #204d74;
+	border-radius : 4px;
+	float         : right;
+}
+
+.jumbotron {
+	min-height : 280px;
+}
