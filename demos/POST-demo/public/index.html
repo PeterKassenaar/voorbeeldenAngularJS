@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>POST-data naar een server</title>
+    <link rel="stylesheet" href="js/vendor/bootstrap/dist/css/bootstrap.min.css"/>
+</head>
+<body>
+<div class="container" ng-controller="myController as vm">
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Login Formulier</h2>
+
+            <p>Voorbeeld van POST-data vanuit een AngularJS-applicatie naar een
+                server (in dit geval een custom NodeJS-server die draait op http://localhost:3000/</p>
+
+            <form id="login-form" role="form" style="display: block;">
+                <div class="form-group">
+                    <input type="text" ng-model="vm.username" name="vm.username" id="username" tabindex="1"
+                           class="form-control"
+                           placeholder="Username" value="">
+                </div>
+                <div class="form-group">
+                    <input type="email" ng-model="vm.email" name="vm.email" id="email" tabindex="2" class="form-control"
+                           placeholder="E-mailadres">
+                </div>
+                <div class="form-group">
+                    <button class="form-control btn btn-primary"
+                            ng-click="vm.doLogin()">Log in
+                    </button>
+                </div>
+            </form>
+            <h3>Response:</h3>
+
+            <div>{{ vm.response }}</div>
+        </div>
+    </div>
+</div>
+<script src="js/vendor/angular/angular.min.js"></script>
+<script>
+    (function () {
+        'use strict';
+
+        angular.module('myApp', [])
+                .controller('myController', myController);
+
+        myController.$inject = ['$http'];
+        function myController($http) {
+            var vm     = this;
+            vm.doLogin = function () {
+                var url   = 'http://localhost:3000/user';
+                var user  = vm.username;
+                var email = vm.email;
+                $http({
+                    method  : 'post',
+                    headers : {
+                        'Content-Type' : 'application/json'
+                    },
+                    url     : url,
+                    data    : {
+                        "username" : user,
+                        "email"    : email
+                    }
+                }).then(function (response) {
+                    console.log(response.data);
+                    vm.response = response.data;
+                }).catch(function (err) {
+                    vm.response = err;
+                });
+            }
+        }
+    })();
+</script>
+</body>
+</html>

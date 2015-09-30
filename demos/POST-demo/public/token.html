@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Test JWT-Token</title>
+    <link rel="stylesheet" href="js/vendor/bootstrap/dist/css/bootstrap.min.css"/>
+</head>
+<body>
+<div class="container" ng-controller="myController as vm">
+    <input type="text" ng-model="vm.username" placeholder="username (peter)"/>
+    <input type="password" ng-model="vm.password" placeholder="password (test)"/>
+    <button class="btn btn-lg btn-primary" ng-click="vm.setToken()">Set Token</button>
+    <button class="btn btn-lg btn-success" ng-click="vm.getToken()">Get Token</button>
+    <h2>Token: {{ vm.token }}</h2>
+</div>
+<script src="js/vendor/angular/angular.min.js"></script>
+<script>
+    (function () {
+        'use strict';
+        var url = 'http://localhost:3000/token';
+
+        angular.module('myApp', [])
+                .controller('myController', myController);
+
+        myController.$inject = ['$http'];
+        function myController($http) {
+            var vm = this;
+            vm.setToken = function () {
+                var user = vm.username;
+                var password = vm.password;
+                $http({
+                    method  : 'post',
+                    headers : {
+                        'Content-Type' : 'application/json'
+                    },
+                    url     : url,
+                    data    : {
+                        "username" : user,
+                        "password" : password
+                    }
+                }).success(function (data) {
+                    console.log(data);
+                    vm.token = data;
+                }).error(function(err){
+                    console.log(err);
+                    vm.token=err;
+                });
+            };
+            vm.getToken = function () {
+                $http({
+                    method  : 'get',
+                    headers : {
+                        'Content-Type' : 'application/json'
+                    },
+                    url     : url,
+                }).success(function (data) {
+                    console.log(data);
+                    vm.token = data;
+                });
+            }
+        }
+    })();
+</script>
+</body>
+</html>
