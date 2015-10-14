@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title>Angular JS Template</title>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+    <link href="css/bootstrap.css" rel="stylesheet"/>
+</head>
+<body>
+<!-- De data staat nu in een aparte controller. In een echte applicatie zul je deze nog uit-refactoren
+    naar aparte bestanden en services, maar voor demo-doeleinden zie je nu goed wat er gebeurd -->
+<div class="container" ng-controller="personController">
+    <h1>06 - Modules, Controllers and scope</h1>
+
+    <input type="text"
+           value=""
+           ng-model="person.name"
+           class="input-lg" placeholder="typ je naam..."/>
+    <input type="text"
+           value=""
+           ng-model="person.locatie"
+           class="input-lg" placeholder="typ je locatie..."/>
+    <button class="btn btn-primary" ng-click="addPerson()">Voeg persoon toe</button>
+    <ul class="list-group">
+        <li ng-repeat="p in persons| filter: name"
+           class="list-group-item">
+            {{ p.name | uppercase }} - {{ p.locatie }}
+            <span class="btn btn-danger btn-sm right"
+                  ng-click="deletePerson(p)">Verwijder</span>
+        </li>
+    </ul>
+</div>
+<!-- Scripts below here -->
+<script src="js/vendor/angular/angular.min.js"></script>
+<script>
+
+    (function () {
+        // 1. Module maken
+        angular.module('myApp', []); // SETTER!
+
+        // 2. Controller maken op module
+        angular.module('myApp') // GETTER
+                .controller('personController',personController);
+
+        personController.$inject=['$scope', '$location'];
+        function personController($scope, $location) {
+            // Hier voegen we een property persons toe aan het $scope-object.
+            // $scope wordt door Angular runtime gemaakt en acteert als het ViewModel;
+            // $scope is de 'lijm' tussen de View en de Controller.
+            $scope.persons = [
+                {'name' : 'Sido', locatie : 'Groningen'},
+                {'name' : 'Rudie', locatie : 'Friesland'},
+                {'name' : 'Adriaan', locatie : 'Groningen'},
+                {'name' : 'Bassie', locatie : 'Almere'},
+                {'name' : 'Daniel', locatie : 'Groningen'},
+                {'name' : 'Tom', locatie : 'Groningen'},
+                {'name' : 'Michiel', locatie : 'Amsterdam'},
+                {'name' : 'Jeroen', locatie : 'Arnhem'},
+                {'name' : 'Irene', locatie : 'Maastricht'},
+                {'name' : 'Mike', locatie : 'Zutphen'}];
+
+            // 1. Functie om persoon toe te voegen aan de array.
+            $scope.addPerson = function () {
+                var newPerson = {
+                    name    : $scope.person.name,
+                    locatie : $scope.person.locatie
+                };
+               $scope.persons.push(newPerson);
+               $scope.person.name = '';
+               $scope.person.locatie = '';
+            };
+
+            // 2. Functie om persoon te verwijderen uit de array.
+            // De te verwijderen entry wordt meegegeven als object in
+            // de ng-repeat.
+            $scope.deletePerson = function (person) {
+                var i = $scope.persons.indexOf(person);
+                if (i > -1) {
+                   $scope.persons.splice(i, 1);
+                }
+            }
+        }
+
+        //****************************************
+    })();
+</script>
+
+</body>
+</html>
