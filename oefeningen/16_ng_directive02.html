@@ -1,69 +1,110 @@
 ﻿<!DOCTYPE html>
 <html ng-app="myApp">
 <head>
-	<title>Angular JS Template</title>
-	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-	<link href="css/bootstrap.css" rel="stylesheet" />
-	<link href="css/styles.css" rel="stylesheet" />
-	<style>
-		
-	</style>
+    <title>Angular JS Template</title>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+    <link href="css/bootstrap.css" rel="stylesheet"/>
+    <link href="css/styles.css" rel="stylesheet"/>
 </head>
 <body>
-	<div class="container">
-		<!-- custom directive -->
-		<div data-my-clock></div> 
-		<!--<my-clock></my-clock>-->
-	</div>
-	<!-- ***************-->
-	<!-- Vendor scripts -->
-	<!-- ***************-->
-	<script src="js/vendor/angular/angular.min.js"></script>
+<div class="container">
 
-	<!-- Custom scripts -->
-	<script>
-		// Writing a custom 'clock' directive
-		var app = angular.module('myApp', [])
-
-		// Definieer de directive
-		app.directive('myClock', function () {
-			return {
-				template: '<p>{{ time }}</p>',
-				restrict: 'AE',
-				replace: true,				
-				// 1. Oude manier: met handmatig setInterval en $scope.$apply()
-				controller: function ($scope) {
-					// bootstrapper
-					$scope.time = new Date();
-
-					// interval loop
-					setInterval(function () {
-						$scope.time = new Date(); // TODO: mooiere formattering
-						$scope.$apply(); // handmatig tijd bijwerken in de scope
-					}, 1000);
-				
-				}
-				// 2. Nieuwe, Angular > 1.2 manier, met $interval
-				//controller: function ($scope, $interval) {
-				//	// bootstrapper
-				//	$scope.time = new Date();
-
-				//	// interval loop
-				//	var update = $interval(function () {
-				//		$scope.time = new Date();						
-				//	}, 1000);
-
-				//	// just to be safe: destroy interval on scope destroy, for instance when view is replaced by another view
-				//	$scope.$on('$destroy', function () {
-				//		$interval.cancel(update);
-				//	});
-				//}
-
-			}
-
-		});
+    <!-- custom directive -->
+    <div my-clock2 city="Utrecht"></div>
+    <div my-clock2 city="Los Angeles"></div>
+    <div my-clock2 city="Melbourne"></div>
+    <div my-clock2 city="Bangkok"></div>
 
 
-	</script>
+</div>
+<!-- ***************-->
+<!-- Vendor scripts -->
+<!-- ***************-->
+<script src="js/vendor/angular/angular.min.js"></script>
+
+<!-- Custom scripts -->
+<script>
+    // Writing a custom 'clock' directive
+    var app = angular.module('myApp', ['pk.directives']);
+
+    // Definieer de directive
+    angular.module('pk.directives', [])
+            .directive('myClock', function () {
+                return {
+                    template         : '<h1>{{ vm.time | date: "HH:mm:ss" }}</h1>',
+                    restrict         : 'AE',
+                    bindToController : true,
+                    controllerAs     : 'vm',
+
+                    // 2. Nieuwe, Angular >= 1.2 manier, met $interval
+                    controller : function ($scope, $interval) {
+                        // bootstrapper
+                        var vm  = this;
+                        vm.time = new Date();
+
+                        // interval loop
+                        var update = $interval(function () {
+                            vm.time = new Date();
+                        }, 1000);
+
+                        // just to be safe: destroy interval on scope destroy, for instance when view is replaced by another view
+                        $scope.$on('$destroy', function () {
+                            $interval.cancel(update);
+                        });
+                    }
+
+                }
+
+            });
+
+    app.directive('myClock2', clockDirective);
+    function clockDirective($interval) {
+        var directive = {
+            template   : '<h1>Time: {{ time | date: "HH:mm:ss" }} </h1>',
+            link       : link,
+            controller : clockController,
+            replace    : false,
+            scope      : {
+                city : '@'
+            }
+        };
+
+        clockController.$inject = ['$scope', '$interval', '$element'];
+        function clockController($scope, $interval, $element) {
+            $scope.time = new Date();
+            var update  = $interval(function () {
+                $scope.time = new Date();
+            }, 1000);
+            console.log($scope.city);
+            console.log($element);
+            var el = $element;
+            el.css({'background-color': 'green'})
+        }
+
+        return directive;
+
+        //*************************************
+        // HIER de link functie van de directive
+        function link(scope, element, attr) {
+            element.on('mouseover', function () {
+                element.css('background-color', 'yellow');
+            });
+            element.on('mouseout', function () {
+                element.css('background-color', 'transparent');
+            });
+            element.append('<span>Uw stad: ' + attr.city);
+        }
+
+        // HIER de controller functie van de directive
+        function controller($scope, $interval, $element) {
+            $scope.time = new Date();
+            var update  = $interval(function () {
+                $scope.time = new Date();
+
+            }, 1000);
+
+        }
+    }
+</script>
 </body>
 </html>
