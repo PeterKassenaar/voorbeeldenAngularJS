@@ -1,8 +1,13 @@
-﻿(function (app) {
+﻿(function () {
 	// 1. Maak een JavaScript-variabele en Angular-module op basis van de HTML-directive
 	// 2. Voeg een controller toe aan de de module.
-	var citiesController = function ($scope) {
-		$scope.cities = [
+
+	angular.module('myApp')
+			.controller('citiesController',  citiesController);
+
+	function citiesController () {
+		var vm = this;
+		vm.cities = [
 			{ 'name': 'New York', 'country': 'USA' },
 			{ 'name': 'Los Angeles', 'country': 'USA' },
 			{ 'name': 'Las Vegas', 'country': 'USA' },
@@ -15,5 +20,5 @@
 			{ 'name': 'Madrid', 'country': 'SP' }
 		];
 	};
-	app.controller('citiesController', ['$scope', citiesController]);
-})(angular.module('myApp'));
+
+})();

@@ -56,7 +56,7 @@
 		factory.getWeather = function (city) {
 			return $http({
 				method: 'get',
-				url: 'http://api.openweathermap.org/data/2.5/weather?units=metric&q=' + city
+				url: 'http://api.openweathermap.org/data/2.5/weather?units=metric&appid=8566d604cd9402b65394b034e52aa2af&q=' + city
 			});
 		};
 

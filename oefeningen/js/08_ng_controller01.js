@@ -1,7 +1,11 @@
-﻿(function (app) {
+﻿(function () {
 
-	// 2. Maak de eerste controller
-	var personController = function ($scope) {
+	// 1. Haal referentie op naar de app
+	angular.module('myApp')
+			.controller('personController', ['$scope', personController]);
+
+	// 2. Maak de  controller
+	function personController ($scope) {
 		$scope.persons = [{ 'name': 'John' },
 			{ 'name': 'Bob' },
 			{ 'name': 'Bart' },
@@ -12,7 +16,7 @@
 			{ 'name': 'Jeroen' },
 			{ 'name': 'Irene' },
 			{ 'name': 'Mike' }];
-	};
+	}
 
-	app.controller('personController', ['$scope', personController]);
-})(angular.module('myApp')); // bestaande module doorgeven als parameter
+
+})();
