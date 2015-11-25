@@ -1,8 +1,9 @@
 ﻿(function () {
     angular.module('myApp')
-        .controller('personController', ['$scope', personController]);
+        .controller('personController', personController);
 
     // 2. Maak de eerste controller
+    personController.$inject = ['$scope'];
     function personController($scope) {
         $scope.persons = [
             {id: 0, 'name': 'John'},

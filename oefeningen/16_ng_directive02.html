@@ -10,10 +10,10 @@
 <div class="container">
 
     <!-- custom directive -->
-    <div my-clock2 city="Utrecht"></div>
-    <div my-clock2 city="Los Angeles"></div>
-    <div my-clock2 city="Melbourne"></div>
-    <div my-clock2 city="Bangkok"></div>
+    <div my-clock2 city="Utrecht">Hello Utrecht</div>
+    <div my-clock2 city="Los Angeles">Hello LA</div>
+    <div my-clock2 city="Melbourne">Hello Melbourne</div>
+    <div my-clock2 city="Bangkok">Hello Bangkok</div>
 
 
 </div>
@@ -29,41 +29,15 @@
 
     // Definieer de directive
     angular.module('pk.directives', [])
-            .directive('myClock', function () {
-                return {
-                    template         : '<h1>{{ vm.time | date: "HH:mm:ss" }}</h1>',
-                    restrict         : 'AE',
-                    bindToController : true,
-                    controllerAs     : 'vm',
+            .directive('myClock2', clockDirective);
 
-                    // 2. Nieuwe, Angular >= 1.2 manier, met $interval
-                    controller : function ($scope, $interval) {
-                        // bootstrapper
-                        var vm  = this;
-                        vm.time = new Date();
-
-                        // interval loop
-                        var update = $interval(function () {
-                            vm.time = new Date();
-                        }, 1000);
-
-                        // just to be safe: destroy interval on scope destroy, for instance when view is replaced by another view
-                        $scope.$on('$destroy', function () {
-                            $interval.cancel(update);
-                        });
-                    }
-
-                }
-
-            });
-
-    app.directive('myClock2', clockDirective);
-    function clockDirective($interval) {
+    // Implementatie van de directive
+    function clockDirective() {
         var directive = {
-            template   : '<h1>Time: {{ time | date: "HH:mm:ss" }} </h1>',
-            link       : link,
+            template   : '<div><h1>Time: {{ time | date: "HH:mm:ss" }} </h1><div>Hello World</div></div>',
+            link       : linkFunction,
             controller : clockController,
-            replace    : false,
+            replace    : true,
             scope      : {
                 city : '@'
             }
@@ -77,15 +51,15 @@
             }, 1000);
             console.log($scope.city);
             console.log($element);
-            var el = $element;
-            el.css({'background-color': 'green'})
+//            var el = $element;
+//            el.append("<hr/>Hello Nieuwegein!")
         }
 
         return directive;
 
         //*************************************
         // HIER de link functie van de directive
-        function link(scope, element, attr) {
+        function linkFunction(scope, element, attr) {
             element.on('mouseover', function () {
                 element.css('background-color', 'yellow');
             });
@@ -93,16 +67,6 @@
                 element.css('background-color', 'transparent');
             });
             element.append('<span>Uw stad: ' + attr.city);
-        }
-
-        // HIER de controller functie van de directive
-        function controller($scope, $interval, $element) {
-            $scope.time = new Date();
-            var update  = $interval(function () {
-                $scope.time = new Date();
-
-            }, 1000);
-
         }
     }
 </script>

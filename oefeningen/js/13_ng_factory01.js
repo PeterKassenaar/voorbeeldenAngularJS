@@ -11,9 +11,9 @@
 		interceptor.request = function (config) {
 			// Request success
 			console.info('in interceptor request voor ' + config.url + ' : ', config);
-			// Doe aanvullende dingen...
-			// Zet een AUth header config.headers('myauth', 'xxx-1224')
-			// Toon Loading indicator
+			// Doe aanvullende dingen, bijvoorbeeld...
+			// 	Zet een Auth header config.headers['myauth'] = 'xxx-1224'
+			// 	Gooi event voor tonen Loading indicator
 			return config;
 		};
 

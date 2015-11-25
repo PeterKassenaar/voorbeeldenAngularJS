@@ -4,14 +4,16 @@ var jwt = require('jwt-simple');
 var _ = require('lodash');
 var app = express();
 //*******************
-// Parse forms & JSON in body
+// 1. Parse forms & JSON in body
 //*******************
 app.use(bodyParser.urlencoded({
     extended: true
 }));
 app.use(bodyParser.json());
 
-//Stel middleware in voor serveren van statische bestanden (HTML, CSS, images)
+//****************
+// 2. Stel middleware in voor serveren van statische bestanden (HTML, CSS, images)
+//****************
 app.use(express.static(__dirname + '/public'));
 
 app.get('/api', function (req, res) {
@@ -19,7 +21,7 @@ app.get('/api', function (req, res) {
 });
 
 //****************
-// De route voor vewerken van AngularJS - POST-request
+// 3. De route voor vewerken van AngularJS - POST-request
 //****************
 var user = {};
 app.post('/user', function (req, res) {
@@ -43,5 +45,5 @@ app.listen(3000, function () {
 });
 
 //**************
-// TODO: Echte authenticatie via JWT, zie bijvoorbeeld https://github.com/auth0/angularjs-jwt-authentication-tutorial
+// 4. TODO: Echte authenticatie via JWT, zie bijvoorbeeld https://github.com/auth0/angularjs-jwt-authentication-tutorial
 //*************

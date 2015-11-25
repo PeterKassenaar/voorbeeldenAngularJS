@@ -9,8 +9,8 @@
 		// 2. Functies request en response te onderscheppen
 		interceptor.request = function (config) {
 			// broadcast custom event, stuur config.url mee als data
-			$rootScope.$broadcast('my-custom-event', config.url)
-			// Return the config or wrap it in a promise if blank.
+			$rootScope.$broadcast('my-custom-event', config.url);
+			// Return the config.
 			return config;
 		};
 
@@ -18,7 +18,7 @@
 		interceptor.response = function (response) {
 			// broadcast custom event, stuur config.url mee als data
 			$rootScope.$broadcast('my-custom-event-ready', response.data)
-			// Return the config or wrap it in a promise if blank.
+			// Return the config.
 			return response;
 		};
 
