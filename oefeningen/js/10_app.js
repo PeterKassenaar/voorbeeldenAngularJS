@@ -3,7 +3,7 @@
     angular.module('myApp', ['ngRoute'])
         .config(configRoutes);
 
-    configRoutes.$inject = ['routeProvider'];
+    configRoutes.$inject = ['$routeProvider'];
     function configRoutes($routeProvider) {
         $routeProvider
             .when('/', {
