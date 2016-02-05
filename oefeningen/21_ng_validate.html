@@ -48,7 +48,6 @@
                name="firstName"
                placeholder="Voornaam *"
                ng-model="user.firstName"
-               ng-blur="checkField()"
                required
                pattern="[a-zA-Z]+"
                class="input-lg"/><br/>
@@ -76,6 +75,15 @@
              ng-show="!form1.$valid">{{ validationMsg }}
         </div>
 
+        <!-- Nieuw sinds AngularJS 1.3: ng-model-options -->
+
+        <!--<input type="text" name="userName"-->
+        <!--required-->
+        <!--ng-model="user.name"-->
+        <!--ng-model-options="{ updateOn: 'blur' }"-->
+        <!--ng-keyup="cancel($event)"/><br/>-->
+
+        <!--<div>{{user.name}}</div>-->
     </form>
 
 
@@ -92,7 +100,7 @@
                 // Bijvoorbeeld: een valid/invalid message tonen
                 var msgValid = 'Het formulier is goed ingevuld';
                 var msgInvalid = 'Het formulier bevat nog fouten';
-                $scope.validationMsg = ( form1.$valid && !form1.$pristine) ? msgValid : msgInvalid;
+                $scope.validationMsg = (form1.$valid && !form1.$pristine) ? msgValid : msgInvalid;
 
                 // Het in te vullen user-object
                 $scope.user = {};
