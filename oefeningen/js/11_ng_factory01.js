@@ -15,8 +15,7 @@
         factory.getBooks = function () {
             return $http({
                 method: 'jsonp',
-                url: urlYindo + '?callback=JSON_CALLBACK',
-                cache: true
+                url: urlYindo + '?callback=JSON_CALLBACK'
             });
         };
 
