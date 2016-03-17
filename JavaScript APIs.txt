@@ -19,3 +19,6 @@ https://api.github.com/users/ - GitHub user information.
 http://dev.markitondemand.com/Api/v2/Quote?symbol=AAPL  - Aandelen/stock quote information
 http://pokeapi.co/ - The Pokémon RESTful API
 http://www.postcodedata.nl/api/  - Postcode Data (PC + NAW-gegevens)
+    call naar postcodedata, bijvoorbeeld: http://api.postcodedata.nl/v1/postcode/?postcode=5709BV&streetnumber=20&ref=domeinnaam.nl&type=json
+    
+    
