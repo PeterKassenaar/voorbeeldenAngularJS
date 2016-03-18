@@ -11,7 +11,16 @@
 <!-- Let op dat nu objecten van namen worden gemaakt. Anders zijn ze niet te sorteren met orderBy. Deze kan
 	alleen sorteren op properties van objects -->
 <div class="container"
-	 ng-init="persons=[{'name' : 'John', lastname:'AAA'},{'name' : 'Bob', lastname:'CCC'}, {'name' : 'Bart', lastname:'BBB'} ,{'name' : 'Sandra', lastname:'de Boer'},{'name' : 'Harry', lastname:'de Boer'}, {'name' : 'Peter', lastname:'de Boer'}, {'name' : 'Michiel', lastname:'de Boer'}, {'name':  'Jeroen', lastname:'de Boer'}, {'name' : 'Irene', lastname:'de Boer'},{'name': 'Mike', lastname:'de Boer'}]">
+	 ng-init="persons=[{name : 'Leslie', lastname : 'Simon'},
+			{name : 'John', lastname : 'Stevens'},
+			{name : 'Bart', lastname : 'Boeve'},
+			{name : 'Sandra', lastname : 'Saring'},
+			{name : 'Harry', lastname : 'Venderbosch'},
+			{name : 'Peter', lastname : 'Eizinga'},
+			{name : 'Michiel', lastname : 'Haskell'},
+			{name : 'Jeroen', lastname : 'Brugman'},
+			{name : 'Irene', lastname : 'Vreugd'},
+			{name : 'Mike', lastname : 'Korten'}]">
 	<h1>04 - Multiple data filtering</h1>
 
 	<input type="text" value="" ng-model="filterName" class="input-lg" placeholder="typ je naam..."/>
