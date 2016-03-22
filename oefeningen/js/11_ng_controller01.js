@@ -20,10 +20,11 @@
 			});
 
 
+		// Mapping van *delen* van boeken naar een custom book object?
 		// Dan zul je een Service (of Factory) moeten schrijven die zelf
 		// een stukje business logic heeft en pas retourneert als de
 		// items uit de http-call terug zijn gekomen.
-		$scope.partialBooks = bookFactory.getPartialBooks();
+		// $scope.partialBooks = bookFactory.getPartialBooks();
 
 		// 3. Dummmy persoonsgegevens ophalen
 		//bookFactory.getPeople()
