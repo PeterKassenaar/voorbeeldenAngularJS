@@ -7,6 +7,8 @@
 		<a href="#/detail/{{book.ean}}" class="btn btn-primary ">Details</a>
 	</div>
 	<br clear="all" />
-	<h2>Event gereed: {{ eventReadyData | json }}</h2>
+ 	<h2>Event gereed:
+        	<pre> {{ vm.eventReadyData  | json }} </pre>
+    	</h2>
 </div>
 
