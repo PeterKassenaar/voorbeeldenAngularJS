@@ -1,20 +1,38 @@
-﻿(function (app) {
+﻿(function () {
+
+  var app = angular.module('myApp');
 
 	// 1. Maak de controller
-	var bookController = function ($scope, bookFactory) {
-		// 2. Call naar methode in de factory, gebruik promise-notatie 
-		bookFactory.getBooks().success(function (data) {
-			$scope.books = data;
+	var bookController = function ($scope, bookFactory, GLOBALS) {
+		var vm = this;
+		// 2. Call naar methode in de factory, gebruik promise-notatie
+		bookFactory.getBooks()
+			.success(function (data) {
+				vm.books = data;
 		});
 
 		// Luister naar event dat wordt gegooid vanuit de interceptor
-		$scope.$on('my-custom-event', function(event, data){
-			$scope.eventData = data;
+		$scope.$on(GLOBALS.customEvent, function(event, data){
+			vm.eventData = data;
+		   //alert('Ik heb het Event ontvangen!')
 		});
 
 		// Luister naar 'ready' event dat wordt gegooid vanuit de interceptor
-		$scope.$on('my-custom-event-ready', function(event, data){
-			$scope.eventReadyData = data;
+		$scope.$on(GLOBALS.customEventReady, function(event, data){
+				vm.eventReadyData = data;
+				//	alert('Het request/response is compleet!')
+		});
+
+		$scope.$on(GLOBALS.showSpinner, function(event, data){
+			if(data){
+				vm.showSpinner = true;
+			}
+		});
+
+		$scope.$on(GLOBALS.hideSpinner, function(event, data){
+			if(data){
+				vm.showSpinner = false;
+			}
 		});
 	};
 
@@ -30,7 +48,7 @@
 	};
 
 	// 3. Controllers toevoegen aan app
-	app.controller('bookController', ['$scope', 'bookFactory', bookController]);
+	app.controller('bookController', ['$scope', 'bookFactory', 'GLOBALS', bookController]);
 	app.controller('detailController', ['$scope', 'bookFactory', '$routeParams', detailController]);
 
-})(angular.module('myApp')); // bestaande module doorgeven als parameter
+})();

@@ -1,4 +1,4 @@
-﻿(function (app) {
+﻿(function () {
 
 	// 1. Maak de controller
 	var bookController = function ($scope, bookFactory) {
@@ -20,7 +20,7 @@
 	};
 
 	// 3. Controllers toevoegen aan app
-	app.controller('bookController', ['$scope', 'bookFactory', bookController]);
-	app.controller('detailController', ['$scope', 'bookFactory', '$routeParams', detailController]);
+	angular.module('myApp').controller('bookController', ['$scope', 'bookFactory', bookController]);
+	angular.module('myApp').controller('detailController', ['$scope', 'bookFactory', '$routeParams', detailController]);
 
-})(angular.module('myApp')); // bestaande module doorgeven als parameter
+})(); // bestaande module doorgeven als parameter

@@ -4,15 +4,22 @@
 	app.config(function ($routeProvider, $httpProvider) {
 		$routeProvider
 			.when('/', {
-				templateUrl: 'views/13_view02.html' // Default (en enige) view in dit eenvoudige project
+				templateUrl : 'views/13_view02.html' // Default (en enige) view in dit eenvoudige project
 			})
 			.when('/detail/:ean', {
-				templateUrl: 'views/13_view_detail.html'
+				templateUrl : 'views/13_view_detail.html'
 			})
-		.otherwise({ redirectTo: '/' });
+			.otherwise({redirectTo : '/'});
 
 		// push de interceptor-factory op de $httpProvider-module (ze zijn gedefinieerd in 13_ng_factory01.js)
 		$httpProvider.interceptors.push('myInterceptor');
 
 	});
+
+	app.constant('GLOBALS', {
+		customEvent      : 'my-custom-event',
+		customEventReady : 'my-custom-event-ready',
+		hideSpinner      : 'hideSpinner',
+		showSpinner      : 'showSpinner'
+	})
 })();
