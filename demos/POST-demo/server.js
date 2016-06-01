@@ -36,6 +36,7 @@ app.post('/user', function (req, res) {
     // Echo het user-object naar de client
     // Eventueel;
     //user.token = "1233434536456.778789900";
+    // Meer informatie over JWT (Json Web Tokens: op https://jwt.io/)
     res.json(user);
 
 });
