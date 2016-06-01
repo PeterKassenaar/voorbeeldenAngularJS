@@ -52,7 +52,7 @@
                 var user  = vm.username;
                 var email = vm.email;
                 $http({
-                    method  : 'post',
+                    method  : 'POST', // 'post' in kleine letters werkt ook. 
                     headers : {
                         'Content-Type' : 'application/json'
                     },
