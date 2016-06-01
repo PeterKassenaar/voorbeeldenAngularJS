@@ -3,6 +3,7 @@ var bodyParser = require('body-parser');
 var jwt = require('jwt-simple');
 var _ = require('lodash');
 var app = express();
+var cors = require('cors');
 //*******************
 // 1. Parse forms & JSON in body
 //*******************
@@ -10,6 +11,7 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 app.use(bodyParser.json());
+app.use(cors());
 
 //****************
 // 2. Stel middleware in voor serveren van statische bestanden (HTML, CSS, images)
