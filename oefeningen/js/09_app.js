@@ -17,15 +17,15 @@
 				templateUrl: 'views/09_view01.html',
 				controller: 'personController'
 			})
-			.when('/detail/:id/:name?', {
-				templateUrl: 'views/09_viewDetail.html',
-				controller: 'detailController',
-				controllerAs: 'd'
-			})
 			.when('/steden', {
 				templateUrl: 'views/09_view02.html',
 				controller: 'citiesController',
 				controllerAs: 'c'
+			})
+			.when('/detail/:id/:name?', {
+				templateUrl: 'views/09_viewDetail.html',
+				controller: 'detailController',
+				controllerAs: 'd'
 			})
 			.when('/404', {
 				templateUrl: 'views/404.html'
