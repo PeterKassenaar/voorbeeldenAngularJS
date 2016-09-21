@@ -1,5 +1,7 @@
 # Created by .ignore support plugin (hsz.mobi)
 ### JetBrains template
+.idea
+*.xml
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm
 
 *.iml
