@@ -22,7 +22,7 @@
 		interceptor.response = function (config) {
 			// broadcast custom event, stuur config.url mee als data
 			//$rootScope.$broadcast('my-custom-event-ready', 'Event gereed!')
-			$rootScope.$broadcast(GLOBALS.customEventReady, 'Welkom beste klant!');
+			$rootScope.$broadcast(GLOBALS.customEventReady, 'Event Gereed!');
 			return config;
 
 		};
