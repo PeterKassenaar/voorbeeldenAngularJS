@@ -9,6 +9,7 @@ https://addb.absolutdrinks.com/docs/ - Eigen drankjes mixen, na sign-up
 
 
 // DEZE API's zijn open, zonder registratie beschikbaar (registratie aanvullend vaak wel mogelijk)
+https://api.spotify.com/v1/search?type=track&query= + artistname
 http://swapi.co/ - The Star Wars API
 http://openweathermap.org/API - Open weathermap
 http://ergast.com/mrd/ - Ergast Motor (Formule 1) API
