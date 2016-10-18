@@ -7,26 +7,19 @@
             {{ book.title + ' - ' + book.firstAuthorName }}
         </li>
     </ul>
-    <hr>
+    <hr />
     <!--Weer in een bepaalde stad ophalen-->
     <h2>Wat is het weer in...</h2>
     <input type="text" ng-blur="resetWeather()" ng-model="city" name="txtCity" placeholder="typ een stad..."/>
     <button ng-click="getWeather()">Haal weer op</button>
     <h2 ng-show="graden">in {{ plaatsnaam }} is het {{ graden }} graden.</h2>
-    <hr/>
+    <hr />
 
     <h2>Dummy People data</h2>
     <!-- Via FillText.com, ophalen van dummy data voor personen-->
     <ul>
         <li ng-repeat="person in people">{{ person.fname + ' ' + person.lname }} ({{person.email}})</li>
     </ul>
-    <!-- Partial books ophalen-->
-    <!--<h2>PartialBooks</h2>
-      <ul>
-          <li ng-repeat="book in partialBooks| orderBy:'id'">
-              {{ book.id+ ': '+ book.title + ' - ' + book.name  }} (dit boek is in het {{ book.language }})
-          </li>
-      </ul>-->
-
+  
 </div>
 
