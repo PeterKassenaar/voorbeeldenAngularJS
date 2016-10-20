@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title>Angular JS Template</title>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+    <link href="css/bootstrap.css" rel="stylesheet"/>
+    <link href="css/styles.css" rel="stylesheet"/>
+</head>
+<body>
+<script src="js/vendor/angular/angular1-5-8.min.js"></script>
+<!-- ***************-->
+<!-- Vendor scripts -->
+<!-- ***************-->
+<div class="container">
+    <!-- custom directive -->
+    <h1>MyClock as a directive</h1>
+    <div my-clock offset="0" plaatsnaam="Amsterdam" timezone="NL"></div>
+    <div my-clock offset="9" plaatsnaam="Tokio" timezone="JP"></div>
+    <div my-clock offset="-9" plaatsnaam="Las Vegas" timezone="USA"></div>
+    <hr>
+
+</div>
+<!-- Custom scripts -->
+<script>
+(function(){
+    'use strict';
+
+	angular.module('myApp', ['pk.clock']);
+
+	angular.module('pk.clock', [])
+		.directive('myClock', myClock);
+
+	function myClock() {
+		return {  // DDO - Directive Definition Object
+			template         : '<h2>{{ vm.plaatsnaam }} ({{vm.difference}}): {{vm.time | date : "HH:mm:ss"}}</h2>',
+			replace          : true,
+			restrict         : 'EA',
+			controller       : clockController,
+			controllerAs     : 'vm',
+			bindToController : true,
+			scope            : {
+				plaatsnaam : '@',
+				timezone   : '@',
+				offset     : '@'
+			}
+		};
+
+		function clockController($interval) {
+			var vm     = this;
+			vm.time    = new Date();
+			var update = $interval(function () {
+				var offset = parseInt(vm.offset),	// integer van van maken
+					here   = new Date(),
+					there  = new Date();
+
+				vm.difference = offset > 0
+					? offset + ' uur later'
+					: offset + ' uur vroeger';
+				there.setHours(here.getHours() + offset);
+				vm.time = there;
+			}, 1000);
+		}
+	}
+})();
+</script>
+</body>
+</html>
