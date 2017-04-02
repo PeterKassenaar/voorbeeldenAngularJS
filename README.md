@@ -3,12 +3,12 @@ voorbeeldenAngularJS
 
 Codevoorbeelden en oefenbestanden bij de training AngularJS.
 
-##Gebruik
+## Gebruik
 * in \demos staan verschillende demo-projecten.
 * in \oefeningen staan de genummerde bestanden die bij de oefeningen horen.
 
 
-##Inhoud \demos:
+## Inhoud \demos:
 * \angular app - modules - een eenvoudige app die is opgebouwd uit losse injectable modules in plaats van één ng-app
 * \custom-directive - een jquery/bootstrap plugin gebruiken als angular directive.
 * \frontendAuth2 - complete AngularJS-app met een mogelijke implementatie van token based client-sided authentication.
