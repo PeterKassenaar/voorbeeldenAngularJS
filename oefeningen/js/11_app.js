@@ -1,6 +1,6 @@
 ﻿(function () {
 	// Definieer de module/app in dit bestand en voeg (later) eventuele dependencies toe
-	var app = angular.module('myApp', ['ngRoute', 'ngSanitize']);
+	var app = angular.module('myApp', ['ngRoute']);
 	app.config(function ($routeProvider) {
 		$routeProvider
 			.when('/', {				

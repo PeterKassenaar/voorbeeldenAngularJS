@@ -45,22 +45,7 @@
         <hr/>
     </div>
 
-    <!-- Spotify Voorbeeld -->
-    <h2>Search Spotify</h2>
-    <input type="text"
-           class="input-lg"
-           ng-model="artist"
-           placeholder="typ een artiest..."/>
-    <button ng-click="getArtist(artist)"
-            class="btn btn-primary">Get Artist!</button>
 
-    <ul id="result">
-        <li ng-repeat="track in tracks">
-            <img class="albumCover" ng-src="{{track.cover}}" alt="">
-            <h3>{{ track.name }}</h3>
-            <audio controls ng-src="{{ track.preview }}" ></audio>
-        </li>
-    </ul>
     <!--<h2>Dummy People data</h2>-->
     <!-- Via FillText.com, ophalen van dummy data voor personen-->
     <!--<ul>-->
