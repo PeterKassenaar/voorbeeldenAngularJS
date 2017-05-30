@@ -9,7 +9,7 @@
 
 	movieService.$inject=['$http', '$cacheFactory'];
 	function movieService($http,  $cacheFactory){
-		var url = 'http://www.omdbapi.com/?';
+		var url = 'http://www.omdbapi.com/?apikey=f1f56c8e&';
 
 		this.searchMovies = function(keyword){
 			return $http({
