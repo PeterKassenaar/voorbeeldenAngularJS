@@ -1,7 +1,6 @@
 
 // DEZE API's zijn open, zonder registratie beschikbaar (registratie aanvullend vaak wel mogelijk)
 
-https://api.spotify.com/v1/search?type=track&query= + artistname
 https://opendata.rdw.nl/resource/m9d7-ebf2.json?kenteken= + kenteken
 http://swapi.co/ - The Star Wars API
 http://api.openweathermap.org/data/2.5/weather?units=metric&appid=8566d604cd9402b65394b034e52aa2af&q=' + city  - Open weathermap
@@ -17,6 +16,7 @@ http://api.postcodedata.nl/v1/postcode/?postcode=1211EP&streetnumber=60&ref=dome
 http://opendata.cbs.nl/dataportaal/portal.html?_la=nl&_catalog=CBS - Honderden API's met statistische CBS-informatie.
 
 // HIER eerst registreren voor API Key - daarna Key meesturen in elke request.
+https://api.spotify.com/v1/search?type=track&query= + artistname
 http://developer.marvel.com/  - Marvel comics
 https://www.rijksmuseum.nl/nl/api - Rijksmuseum
 https://www.themoviedb.org/documentation/api - The Movie Database
