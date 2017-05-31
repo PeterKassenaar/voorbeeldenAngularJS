@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
 </head>
 <body ng-app="myApp">
+
+<clock-component></clock-component>
 <div class="container" ng-controller="cityController as cCtrl">
     <!-- "Component" in plaats van "Directive"-->
     <h2>Components rechtstreeks met city input</h2>
@@ -29,5 +31,6 @@
 <script src="app.module.js"></script>
 <script src="city.controller.js"></script>
 <script src="cityFactory.js"></script>
+<script src="clock-component.js"></script>
 </body>
 </html>

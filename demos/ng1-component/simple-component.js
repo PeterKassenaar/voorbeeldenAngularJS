@@ -10,12 +10,15 @@
 			}
 		});
 
-	//componentController.$inject = ['cityFactory'];
 	function componentController() {
 		var vm  = this;
 
 		vm.clickMe = function () {
 			alert('hello from ' + vm.city);
+		};
+
+		vm.$onInit = function() {
+			vm.randomNumber = Math.floor((Math.random() *1000) + 1)
 		}
 	}
 })();
