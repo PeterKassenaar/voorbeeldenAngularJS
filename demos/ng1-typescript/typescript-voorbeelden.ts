@@ -22,3 +22,6 @@ let logger2 = (msg)=> {
     console.log(msg)
 };
 logger2('Hello logger 2');
+
+// Voorbeeld van de starter kit:
+// https://www.npmjs.com/package/angular-ts-starter-kit
