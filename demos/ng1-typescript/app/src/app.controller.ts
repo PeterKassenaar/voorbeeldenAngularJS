@@ -7,9 +7,9 @@ class myController implements IControllerModel {
     static $inject=['MyService'];
 
 	constructor() {
-		this.name  = 'Peter Kassenaar';
+		this.name  = 'Mona-Marie';
 		this.items = [
-			{name: 'Zaag'},
+			{name: 'Verfkwast'},
 			{name: 'Boor'},
 			{name: 'Hamer'},
 			{name: 'Spijker'},

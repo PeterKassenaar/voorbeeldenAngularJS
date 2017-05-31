@@ -1,10 +1,11 @@
 "use strict";
 /// <reference path="../../typings/tsd.d.ts"/>
+Object.defineProperty(exports, "__esModule", { value: true });
 var myController = (function () {
     function myController() {
-        this.name = 'Peter Kassenaar';
+        this.name = 'Mona-Marie';
         this.items = [
-            { name: 'Zaag' },
+            { name: 'Verfkwast' },
             { name: 'Boor' },
             { name: 'Hamer' },
             { name: 'Spijker' },
