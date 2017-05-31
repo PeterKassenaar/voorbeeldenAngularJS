@@ -1,0 +1,16 @@
+{
+  "name": "angular-ts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Peter Kassenaar",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.4.8",
+    "bootstrap": "^3.3.6"
+  }
+}

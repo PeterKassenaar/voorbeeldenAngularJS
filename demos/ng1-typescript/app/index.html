@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS - Typescript test</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h2>Angular app</h2>
+    <div ng-controller="myController as vm">
+        <ul class="list-group">
+            <li class="list-group-item" ng-repeat="item in vm.items">
+                {{ item.name }}
+            </li>
+        </ul>
+    </div>
+
+</div>
+
+<!-- Vendor Scripts -->
+<script src="../node_modules/angular/angular.min.js"></script>
+<script src="src/app.module.js"></script>
+<script src="src/app.controller.js"></script>
+<script src="src/app.service.js"></script>
+</body>
+</html>

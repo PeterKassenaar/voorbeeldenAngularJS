@@ -1,0 +1,16 @@
+{
+  "name": "ng1-component",
+  "version": "1.0.0",
+  "description": "Component in plaats van Directive",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Peter Kassenaar - credits Todd Motto",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.5.7",
+    "bootstrap": "^3.3.6"
+  }
+}
