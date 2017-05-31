@@ -1,15 +1,27 @@
-(function(){
-    'use strict';
+(function () {
+	'use strict';
 
-    angular.module('myApp')
-		.factory('cityFactory',cityFactory)
+	angular.module('myApp')
+		.factory('cityFactory', cityFactory)
 
 	function cityFactory() {
 		var factory = {};
-		factory.getCity=function () {
-			return 'amstelveen';
-		}
 
+		var cities      = [
+			{name : 'Enschede'},
+			{name : 'Hengelo'},
+			{name : 'Groningen'},
+			{name : 'Dieren'},
+			{name : 'Nieuwegein'}
+		];
+
+		factory.getCity = function (id) {
+			return cities[id];
+		};
+
+		factory.getCities = function () {
+			return cities;
+		};
 		return factory;
 	}
 
