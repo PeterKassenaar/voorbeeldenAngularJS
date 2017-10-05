@@ -8,14 +8,23 @@
 		// $scope.books = bookFactory.getBooks();
 
 		$scope.getBooks = function () {
-			// 2. Call naar methode in de factory, gebruik promise-notatie
+			// 2. Call naar methode in de factory, gebruik promise-notatie (OUD: .success() en .error()
+			// bookFactory.getBooks()
+			// 	.success(function (bookData) {
+			// 		$scope.books = bookData;
+			// 	})
+			// 	.error(function (err) {
+			// 		alert('FOUT! ' + err)
+			// 	});
+
 			bookFactory.getBooks()
-				.success(function (bookData) {
-					$scope.books = bookData;
+				.then(function (response) { // <== Callback functie voor de API
+					$scope.books = response.data;
 				})
-				.error(function (err) {
-					alert('FOUT! ' + err)
-				});
+				.catch(function (err) {
+					console.log(err);
+					alert('Error! Status: ' + err.status)
+				})
 
 		};
 		// Dan zul je een Service (of Factory) moeten schrijven die zelf
