@@ -27,11 +27,7 @@
 				})
 
 		};
-		// Dan zul je een Service (of Factory) moeten schrijven die zelf
-		// een stukje business logic heeft en pas retourneert als de
-		// items uit de http-call terug zijn gekomen.
-		// $scope.partialBooks = bookFactory.getPartialBooks();
-
+	
 		// 3. Dummmy persoonsgegevens ophalen
 		//bookFactory.getPeople()
 		//  .success(function (data, status, headers, config) {
@@ -40,30 +36,6 @@
 		//  .error(function (data, status, headers, config) {
 		//    alert('Error bij Ajax-call: ', status);
 		//  })
-
-		var spotifyAPI = 'https://api.spotify.com/v1/search?type=track&query=';
-
-		$scope.getArtist = function (artist) {
-			$http({
-				method : 'GET',
-				url    : spotifyAPI + artist
-			})
-				.then(function (artistData) {
-					console.log(artistData.data.tracks);
-					// Transformatie van het return-resultaat
-					var artistTracks = [];
-					artistData.data.tracks.items.forEach(function (track) {
-						var newTrack = {
-							cover   : track.album.images[0].url,
-							name    : track.name,
-							preview : $sce.trustAsResourceUrl(track.preview_url)
-						};
-						artistTracks.push(newTrack)
-					});
-					// Na de transformatie het resultaat toekennen aan de $scope
-					$scope.tracks = artistTracks;
-				})
-		}
 
 	};
 
