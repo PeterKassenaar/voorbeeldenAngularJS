@@ -1,11 +1,11 @@
 voorbeeldenAngularJS
 ====================
 
-Codevoorbeelden en oefenbestanden bij de training AngularJS.
+Codevoorbeelden en oefenbestanden bij de -legacy- training AngularJS.
 
-## Gebruik
-* in \demos staan verschillende demo-projecten.
+## Oefeningen
 * in \oefeningen staan de genummerde bestanden die bij de oefeningen horen.
+* in \demos staan verschillende demo-projecten. Ze horen niet rechtstreeks bij een oefening, maar zijn er als naslag en voorbeeld.
 
 
 ## Inhoud \demos:
