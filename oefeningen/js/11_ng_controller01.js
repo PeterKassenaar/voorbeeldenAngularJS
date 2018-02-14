@@ -1,55 +1,13 @@
 ﻿(function () {
-
-	var app            = angular.module('myApp');
-	// 1. Maak de controller
-	var bookController = function ($scope, bookFactory, $location, $http, $sce) {
-
-		// Dit kan NIET (want: async):
-		// $scope.books = bookFactory.getBooks();
-
-		$scope.getBooks = function () {
-			// 2. Call naar methode in de factory, gebruik promise-notatie (OUD: .success() en .error()
-			// bookFactory.getBooks()
-			// 	.success(function (bookData) {
-			// 		$scope.books = bookData;
-			// 	})
-			// 	.error(function (err) {
-			// 		alert('FOUT! ' + err)
-			// 	});
-
-			bookFactory.getBooks()
-				.then(function (response) { // <== Callback functie voor de API
-					$scope.books = response.data;
-				})
-				.catch(function (err) {
-					console.log(err);
-					alert('Error! Status: ' + err.status)
-				})
-
-		};
-	
-		// 3. Dummmy persoonsgegevens ophalen
-		//bookFactory.getPeople()
-		//  .success(function (data, status, headers, config) {
-		//    $scope.people = data;
-		//  })
-		//  .error(function (data, status, headers, config) {
-		//    alert('Error bij Ajax-call: ', status);
-		//  })
-
-	};
-
-	app.controller('bookController', ['$scope', 'bookFactory', '$location', '$http', '$sce', bookController]);
-
 	////////////////////////////
 	// Weathercontroller maken
 	////////////////////////////
 	angular.module('myApp')
 		.controller('weatherController', weatherController);
 
-	weatherController.$inject = ['bookFactory'];
+	weatherController.$inject = ['weatherFactory'];
 
-	function weatherController(bookFactory) {
+	function weatherController(weatherFactory) {
 
 		var vm         = this;
 		//vm.city = window.localStorage.getItem('city')
@@ -58,12 +16,8 @@
 		vm.showWeather = '';
 		vm.getWeather  = function () {
 			var city = vm.city;
-			var db   = window.localStorage;
 
-			// Set item in localStorage;
-			db.setItem('city', city);
-
-			bookFactory.getWeather(city)// 1. praat tegen service
+			weatherFactory.getWeather(city)// 1. praat tegen service
 				.then(function (weatherData) { //2. ontvang result
 					console.log(weatherData);
 					vm.plaatsnaam  = weatherData.data.name;// 3. bind aan HTML

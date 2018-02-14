@@ -1,19 +1,6 @@
-<div ng-controller="bookController">
-    <h1>11 - Live data via een service met $http</h1>
-
-    <!-- Voor ophalen van boeken via Yindo -->
-    <input type="text" value="" ng-model="filterTitle" class="input-lg" placeholder="filter titel..."/>
-    <button ng-click="getBooks()" class="btn btn-primary">Get books!</button>
-
-    <ul class="list-group">
-        <li class="list-group-item" ng-repeat="book in books | filter: filterTitle">
-            {{ book.title }} - {{ book.firstAuthorName }}
-        </li>
-    </ul>
-
-
+<div ng-controller="weatherController">
+    <h1>11 - Live data via een factory/service met $http</h1>
     <div ng-controller="weatherController as w">
-        Weer in een bepaalde stad ophalen
         <h2>Wat is het weer in...</h2>
 
         <input type="text" class="input-lg"
@@ -23,13 +10,6 @@
         <h2 ng-show="w.graden">in {{ w.plaatsnaam }} is het {{ w.graden }} graden.</h2>
         <hr/>
     </div>
-
-
-    <!--<h2>Dummy People data</h2>-->
-    <!-- Via FillText.com, ophalen van dummy data voor personen-->
-    <!--<ul>-->
-    <!--<li ng-repeat="person in people">{{ person.fname + '  ' + person.lname  }} ({{person.email}})</li>-->
-    <!--</ul>-->
 
 </div>
 
