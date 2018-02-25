@@ -6,7 +6,6 @@ http://swapi.co/ - The Star Wars API
 http://pokeapi.co/ - RESTful Pokemon API
 http://api.openweathermap.org/data/2.5/weather?units=metric&appid=8566d604cd9402b65394b034e52aa2af&q=' + city  - Open weathermap
 http://ergast.com/mrd/ - Ergast Motor (Formule 1) API
-http://api.yindo.com/api/book/new/10 - 10 nieuwste Yindo-boeken
 http://www.filltext.com/ - random user data
 http://omdbapi.com/?apikey=f1f56c8e&s= + movie title - Open Movie Database
 https://api.github.com/users/ - GitHub user information.
