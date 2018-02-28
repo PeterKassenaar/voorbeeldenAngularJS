@@ -64,6 +64,20 @@
 				: GLOBALS.resources.lblLoggedOff;
 			// $scope.key = mijnKey;
 		});
+		
+		//*******************
+  		// Voorbeeld van injection van GLOBALS in een Factory
+		//*******************
+		angular.module('myApp')
+			.factory('myFactory', myFactory);
+
+		myFactory.$inject = ['GLOBALS', '$http'];
+		function myFactory(GLOBALS, $http) {
+			var factory        = {};
+			factory.getWeather = function () {
+				return $http.get(GLOBALS.urlWeather)
+			}
+		}
 	})();
 </script>
 </body>
