@@ -10,7 +10,8 @@
 </head>
 <body>
 <!-- Nog steeds: demoland. de ng-init gaan we straks verplaatsen naar een module/controller -->
-<div class="container" ng-init="names=['John', 'Bob', 'Sandra', 'Harry', 'Peter', 'Michiel', 'Jeroen', 'Irene']">
+<div class="container"
+     ng-init="names=['John', 'Bob', 'Sandra', 'Harry', 'Peter', 'Michiel', 'Jeroen', 'Irene']">
 	<h1>05- My First Module</h1>
 	<!-- directive ng-repeat voor het loopen over een data-collectie -->
 	<ul>
@@ -20,12 +21,12 @@
 	</ul>
 
 </div>
-    
+
 
     <!-- Scripts below here -->
     <script src="js/vendor/angular/angular.min.js"></script>
     <script>
-      
+
         // 2. Maak een JavaScript-variabele met de hoofdmodule voor deze app
         // en Angular-module op basis van de HTML-directive.
         var app = angular.module('myApp', []); // SETTER

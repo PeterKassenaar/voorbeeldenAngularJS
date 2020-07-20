@@ -1,12 +1,12 @@
 (function () {
 
-	// 1. Haal de module op (GETTER) en voeg een controller toe
+	// 1. Get the module (GETTER) and add controller
 	angular.module('myApp')
 		.controller('citiesController', citiesController);
 
 	citiesController.$inject = []; // minify safe
 
-	// 2. Voeg een controller toe aan de de module.
+	// 2. Add controller to the module.
 	function citiesController() {
 		var vm = this;
 		vm.cities = [
@@ -21,5 +21,5 @@
 			{'name': 'Liverpool', 'country': 'GB'},
 			{'name': 'Madrid', 'country': 'SP'}
 		];
-	};
+	}
 })();

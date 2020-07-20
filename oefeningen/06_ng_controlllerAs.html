@@ -1,13 +1,13 @@
 ﻿<!DOCTYPE html>
 <html ng-app="myApp">
 <head>
-	<title>AngularJS - ControllerAs-syntaxis</title>
+	<title>AngularJS - ControllerAs-syntax</title>
 	<meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
 	<link href="css/bootstrap.css" rel="stylesheet"/>
 	<link href="css/styles.css" rel="stylesheet"/>
 </head>
 <body>
-<!-- In de Controller As-syntaxis wordt een alias voor de Controller gebruikt. -->
+<!-- In ControllerAs syntax an alias for the Controller is used. -->
 <div class="container" ng-controller="personController as p">
 	<h1>06 - Controllers As-syntaxis (nieuw)</h1>
 	<input type="text" value="" ng-model="filterName" class="input-lg" placeholder="typ je naam..."/>
@@ -17,22 +17,22 @@
 		</li>
 	</ul>
 	<!-- Voorbeeld van enkele overige properties -->
-	<h2>Stad: {{ p.city }} </h2>
+	<h2>City: {{ p.city }} </h2>
 
-	<h3>Favoriet land: {{ p.country.favorite }} </h3>
+	<h3>Favorite country: {{ p.country.favorite }} </h3>
 
 
 </div>
 <!-- Scripts below here -->
 <script src="js/vendor/angular/angular.min.js"></script>
 <script>
-	// Controller As-syntaxis, kennen geen $scope. Alle properties
-	// worden rechtstreeks op de function (dus op 'this') geplaatst.
+	// Controller As-syntax, do not have $scope. All properties
+	// are bound directly to the function, (so on 'this').
 	angular.module('myApp', [])
 			.controller('personController',
 			function () {
 
-				var vm = this;
+				var vm = this; // 'vm' is just a convention. It stands for 'ViewModel'.
 
 				vm.persons = [{'name': 'John'},
 					{'name': 'Bob'},
