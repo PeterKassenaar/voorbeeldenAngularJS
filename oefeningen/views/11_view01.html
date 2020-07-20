@@ -1,13 +1,16 @@
 <div ng-controller="weatherController">
-    <h1>11 - Live data via een factory/service met $http</h1>
+    <h1>11 - Live data via factory/service with $http</h1>
     <div ng-controller="weatherController as w">
-        <h2>Wat is het weer in...</h2>
+        <h2>What is the temperature in...</h2>
 
         <input type="text" class="input-lg"
                ng-model="w.city"
                placeholder="typ een stad..."/>
-        <button ng-click="w.getWeather()" class="btn btn-primary">Haal weer op</button>
-        <h2 ng-show="w.graden">in {{ w.plaatsnaam }} is het {{ w.graden }} graden.</h2>
+        <button ng-click="w.getWeather()"
+                class="btn btn-primary">Get Weather
+        </button>
+        <h2 ng-show="w.graden">In {{ w.plaatsnaam }}
+            it is {{ w.graden }} degrees Celcius.</h2>
         <hr/>
     </div>
 

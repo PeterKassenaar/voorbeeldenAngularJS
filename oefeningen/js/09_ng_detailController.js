@@ -1,5 +1,6 @@
 ﻿(function () {
-	// Best Practice: eerst module definieren, minify-safe $routeParams injecteren
+	// Best Practice: first create/get module ,
+	// then inject $routeParams minify-safe.
 	angular.module('myApp')
 		.controller('detailController', detailController);
 

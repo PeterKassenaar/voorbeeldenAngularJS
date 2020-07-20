@@ -4,10 +4,11 @@
 
     personFactory.$inject = [];
     function personFactory() {
-        // 1. Maak een 'factory'-object
+        // 1. Create a 'factory'-object
         var factory = {};
 
-        // 2. Definieer data, of andere inhoud
+        // 2. Define data, or other variables that should be
+        // shared over components in your app
         var persons = [{'name': 'John'},
             {'name': 'Bob'},
             {'name': 'Bart'},
@@ -19,13 +20,16 @@
             {'name': 'Irene'},
             {'name': 'Mike'}];
 
-        // 3. Definieer functies als API/interface voor de buitenwereld
+        // 3. Define functions as API/interface for the outside world
         factory.getPersons = function () {
             return persons;
-            // In een live app zal hier een $http-call worden gedaan en geretourneerd
+            // In a live app THIS is the place where you would
+            // do an $http-call.
         };
 
-        // 4. Altijd tot slot: retourneer het factory-object
+        // factory.AddPerson = function() { ... }
+
+        // 4. Always in the end: return the factory-object
         return factory;
     }
 

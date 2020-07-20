@@ -16,7 +16,7 @@
         in malesuada semper mi, id sollicitudin urna fermentum ut fusce varius nisl ac ipsum gravida vel pretium tellus.
     </div>
     <div>
-        <button class="btn btn-primary">{{ lblLogin }}</button>
+        <button class="btn btn-primary" ng-click="onLogon()">{{ lblLogin }}</button>
 
     </div>
     <h2>{{ key }} </h2>
@@ -35,20 +35,20 @@
 
 		// 2. Definieer de constanten binnen die app. Idealiter komen deze natuurlijk in een apart .js-bestand.
 		app.constant('GLOBALS', {
-			appName        : 'Mijn Super app!',
+			appName        : 'My Super app!',
 			appVersion     : '1.0.0',
 			db             : window.localStorage, 		// alias naar localStorage / lokale Database
 			resources      : {
-				lblLoggedOn  : 'Afmelden',
-				lblLoggedOff : 'Aanmelden'
+				lblLoggedOn  : 'Log off',
+				lblLoggedOff : 'Log On'
 			},
-			errorMsg       : 'FOUT: Er is een error opgetreden',
+			errorMsg       : 'Error: There is an error',
 			callbackString : '?callback=JSON_CALLBACK',
 			urlWeather     : 'http://api.openweathermap.org/data/2.5/weather?q='
 			// meer constant properties...
 		});
 
-		// Enkelvoudige waarden met app.value()
+		// Single values with app.value()
 		app.value('mijnKey', 'Hello World');
 		//app.value('mijnKey2', ['x', 'y']);
 		//    app.value('mijnKey3',
@@ -58,13 +58,16 @@
 
 		// 3. Injecteer en gebruik de constanten uit de module GLOBALS
 		app.controller('myController', function ($scope, GLOBALS) {
+		    $scope.onLogon = function(){
+		        alert('not implemented...');
+            }
 			$scope.appName  = GLOBALS.appName;
 			$scope.lblLogin = GLOBALS.isLoggedIn
 				? GLOBALS.resources.lblLoggedOn
 				: GLOBALS.resources.lblLoggedOff;
 			// $scope.key = mijnKey;
 		});
-		
+
 		//*******************
   		// Voorbeeld van injection van GLOBALS in een Factory
 		//*******************
