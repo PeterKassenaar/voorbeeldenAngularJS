@@ -55,13 +55,13 @@
 				var vm     = this;
 				vm.time    = new Date();
 				var update = $interval(function () {
-					var offset = parseInt(vm.offset),	// integer van van maken
+					var offset = parseInt(vm.offset),	// create integer
 						here   = new Date(),
 						there  = new Date();
 
 					vm.difference = offset > 0
-						? offset + ' uur later'
-						: offset + ' uur vroeger';
+						? offset + ' hr. later'
+						: offset + ' hr. earlier';
 					there.setHours(here.getHours() + offset);
 					vm.time = there;
 				}, 1000);
@@ -69,8 +69,8 @@
 		}
 
 		//*****************************
-		// Clock as a component (angular 1.5+)
-		// Meer informatie: https://toddmotto.com/exploring-the-angular-1-5-component-method/
+		// Clock as a separate component (angular 1.5+)
+		// More information: https://toddmotto.com/exploring-the-angular-1-5-component-method/
 		//*****************************
 		angular.module('pk.component', [])
 			.component('clock', {
@@ -93,13 +93,13 @@
 			var vm     = this;
 			vm.time    = new Date();
 			var update = $interval(function () {
-				var offset = parseInt(vm.offset),	// integer van van maken
+				var offset = parseInt(vm.offset),	// parse to an integer
 					here   = new Date(),
 					there  = new Date();
 
 				vm.difference = offset > 0
-					? offset + ' uur later'
-					: offset + ' uur vroeger';
+					? offset + ' hr. later'
+					: offset + ' hr. earlier';
 				there.setHours(here.getHours() + offset);
 				vm.time = there;
 			}, 1000);

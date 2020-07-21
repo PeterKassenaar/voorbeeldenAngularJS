@@ -6,7 +6,7 @@
 	<link href="css/bootstrap.css" rel="stylesheet" />
 	<link href="css/styles.css" rel="stylesheet" />
 	<style>
-		
+
 	</style>
 </head>
 <body>
@@ -51,7 +51,7 @@
 			return {
 				template: '<a href="{{ myUrl }}">{{ myText }}</a>',
 				restrict: 'A',
-				// nieuw: isolated scope voor deze directive
+				//  Best practice: Isolated scope for directive
 				scope: {
 					myUrl: '@',
 					myText: '@'

@@ -6,7 +6,7 @@
 	<link href="css/bootstrap.css" rel="stylesheet" />
 	<link href="css/styles.css" rel="stylesheet" />
 	<style>
-		
+
 	</style>
 </head>
 <body>
@@ -25,16 +25,16 @@
 		// Define app module
 		var app = angular.module('myApp', []);
 
-		
+
 		// Define directive
 		app.directive('pkBreadcrumb', function ($location) {
 			return {
 				restrict: 'AE',
-				template: '<span> u bent hier: {{ path }} </span>',
+				template: '<span> You are here: {{ path }} </span>',
 				link: function (scope, el, attrs) {
 					console.info('breadcrumb-directive loaded...');
-					scope.path = $location.absUrl(); // toon complete URL
-					// scope.path = $location.path(); // voor alleen het pad
+					scope.path = $location.absUrl(); // show complete URL
+					// scope.path = $location.path(); // just the path
 				}
 			};
 		});

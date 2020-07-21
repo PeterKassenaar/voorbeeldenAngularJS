@@ -49,13 +49,13 @@
 			var vm     = this;
 			vm.time    = new Date();
 			var update = $interval(function () {
-				var offset = parseInt(vm.offset),	// integer van van maken
+				var offset = parseInt(vm.offset),	// create integer
 					here   = new Date(),
 					there  = new Date();
 
 				vm.difference = offset > 0
-					? offset + ' uur later'
-					: offset + ' uur vroeger';
+					? offset + ' hr. later'
+					: offset + ' hr. earlier';
 				there.setHours(here.getHours() + offset);
 				vm.time = there;
 			}, 1000);

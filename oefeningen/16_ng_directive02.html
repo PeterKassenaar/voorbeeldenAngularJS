@@ -27,11 +27,11 @@
     // Writing a custom 'clock' directive
     var app = angular.module('myApp', ['pk.directives']);
 
-    // Definieer de directive
+    // Define  directive
     angular.module('pk.directives', [])
             .directive('myClock2', clockDirective);
 
-    // Implementatie van de directive
+    // Implementation of clockDirective
     function clockDirective() {
         var directive = {
             template   : '<div><h1>Time: {{ time | date: "HH:mm:ss" }} </h1><div>Hello World</div></div>',
@@ -58,7 +58,8 @@
         return directive;
 
         //*************************************
-        // HIER de link functie van de directive
+        // THIS is the link function of the directive
+        //*************************************
         function linkFunction(scope, element, attr) {
             element.on('mouseover', function () {
                 element.css('background-color', 'yellow');
