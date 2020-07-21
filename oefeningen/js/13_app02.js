@@ -6,12 +6,12 @@
 	myConfig.$inject = ['$routeProvider', '$httpProvider'];
 	function myConfig($routeProvider, $httpProvider) {
 		$httpProvider.interceptors.push('myInterceptor');
-		
+
 		$routeProvider
 			.when('/', {
 				templateUrl : 'views/13_view02.html' // Default (en enige) view in dit eenvoudige project
 			})
-			.when('/detail/:ean', {
+			.when('/detail/:id', {
 				templateUrl : 'views/13_view_detail.html'
 			})
 			.otherwise({redirectTo : '/'});

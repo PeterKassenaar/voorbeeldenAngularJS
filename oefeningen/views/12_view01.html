@@ -1,9 +1,10 @@
 <div ng-controller="movieController">
-	<h1>12 - Movies met detailpagina's met $http</h1>
+	<h1>12 - Movies with detail pages with $http</h1>
 
-	<div class="book" ng-repeat="movie in movies">
-		<p class="bookTitle">{{ movie.Title }} </p>
-		<p class="bookAuthor">{{movie.Year}}</p>
+	<div class="movie" ng-repeat="movie in movies">
+		<img src="{{movie.Poster}}" alt="movie poster" class="movieImg">
+		<p class="movieTitle">{{ movie.Title }} </p>
+		<p class="movieAuthor">{{movie.Year}}</p>
 		<a href="#/detail/{{movie.imdbID}}" class="btn btn-primary ">Details</a>
 	</div>
 </div>

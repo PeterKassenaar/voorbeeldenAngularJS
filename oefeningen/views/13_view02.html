@@ -1,14 +1,17 @@
-﻿<div ng-controller="bookController as bc">
-	<h1>13 - Interceptor</h1>
-	<h2>Event: {{ bc.eventData }}</h2>
-	<div class="book" ng-repeat="book in bc.books">
-		<p class="bookTitle">{{ book.title }} </p>
-		<p class="bookAuthor">{{book.firstAuthorName}}</p>
-		<a href="#/detail/{{book.ean}}" class="btn btn-primary ">Details</a>
+﻿<div ng-controller="movieController as mc">
+	<h1>13 - Interceptors and events</h1>
+	<h2>Event: {{ mc.eventData }}</h2>
+	<div ng-if="mc.showSpinner">
+		<img src="img/spinner.gif" height="600" width="800" alt="please wait..."/>
 	</div>
-	<br clear="all" />
- 	<h2>Event gereed:
-        	<pre> {{ bc.eventReadyData  | json }} </pre>
-    	</h2>
+	<div class="movie" ng-repeat="movie in mc.movies">
+		<img src="{{ movie.Poster}}" alt="Poster" class="movieImg">
+		<p class="movieTitle">{{ movie.Title }} </p>
+		<p class="movieAuthor">{{movie.Year}}</p>
+		<a href="#/detail/{{movie.imdbID}}" class="btn btn-primary ">Details</a>
+	</div>
+	<hr />
+	<h2>Event done:
+<pre> {{ mc.eventReadyData  | json }} </pre>
+	</h2>
 </div>
-
