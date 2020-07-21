@@ -5,15 +5,15 @@
 	movieFactory.$inject = ['$http'];
 
 	function movieFactory($http) {
-		// 1. Maak een 'factory'-object
+		// 1. Create a 'factory' object
 		var factory = {};
 
-		// 2. Definieer URL's waar gegevens worden opgehaald (hier: OMDB API)
-		var url = 'http://omdbapi.com/?apikey=f1f56c8e&s=', 		// Let op de 's=' parameter,
-			urlDetails = 'http://omdbapi.com/?apikey=f1f56c8e&i=';	// let op de 't=' parameter, voor ophalen details
+		// 2. Define URL's to get data from (here: OMDB API)
+		var url = 'http://omdbapi.com/?apikey=f1f56c8e&s=', 		// watch the 's=' parameter,
+			urlDetails = 'http://omdbapi.com/?apikey=f1f56c8e&i=';	// watch the 't=' parameter, voor ophalen details
 
-		// 3a. Definieer functies als API/interface voor de buitenwereld.
-		// Als eerste de globale functie getMovies(), die Hardcoded alle 'avatar' films ophaalt
+		// 3a.Define functions to call the factory from the outside world
+		// Global function getMovies(), fetching all 'avatar' movies, hardcoded.
 		factory.getMovies = function () {
 			return $http({
 				method: 'get',
@@ -21,7 +21,7 @@
 			});
 		};
 
-		// 3b. Haal details op voor 1 movie.
+		// 3b. Get details for one movie
 		factory.getMovieDetail = function (id) {
 			return $http({
 				method: 'get',
@@ -29,7 +29,7 @@
 			});
 		};
 
-		// 4. Altijd tot slot: retourneer het factory-object
+		// 4. Return factory object
 		return factory;
 	}
 })();
