@@ -1,54 +1,55 @@
 ﻿(function () {
 	//
-	// Eerste factory/service op deze app, de Interceptor (om XHR-requests te onderscheppen)
+	// First factory/service on deze app:
+	// The Interceptor (to catch XHR-requests)
 	//
 	angular.module('myApp')
 		.factory('myInterceptor', myInterceptor);
 
 	myInterceptor.$inject = ['$location']; //minify safe
 	function myInterceptor($location) {
-		// 1. Maak een 'factory'-object
+		// 1. Create a 'factory'-object
 		var interceptor = {};
 
-		// 2. Functies om success te onderscheppen
+		// 2. Function to capture successful OUTBOUND calls
 		interceptor.request = function (request) {
 			// Request success
-			console.log('In interceptor request voor ' + request.url + ' : ', request);
-			// Doe aanvullende dingen, bijvoorbeeld:
-			//a. Zet een Auth header 
+			console.log('In interceptor request for ' + request.url + ' : ', request);
+			// Handle additional stuff, for instance:
+			//a. Create an Auth header
 			//request.headers['X-token']= '1239871924662134823845'
-			// b. Toon Loading indicator
-			return request; 		// voor nu: ongewijzigd doorgeven
+			// b. Show Loading indicator (we're gonna do that next)
+			return request; 		// for now: return unaltered.
 		};
 
 		interceptor.response = function (response) {
 			// Response success
 			console.log('in interceptor response: ', response);
-			// ... doe aanvullende dingen...
-			// Verberg loading indicator
-			return response;	// voor nu: ongewijzigd teruggeven
+			// ... additional stuff ...
+			// Like hiding loading indicator
+			return response;	// for now: return unaltered
 		};
 
-		// 3. Functies om de Errors af te handelen.
+		// 3. Functions to handle Errors.
 		interceptor.requestError = function (rejection) {
 			console.error('in interceptor requestError: ', rejection); // Contains the data about the error on the request.
 			// Return the promise rejection.
-			// Verberg loading indicator
+			// hide loading indicator
 			return rejection;
 		};
 
 		interceptor.responseError = function (rejection) {
 			console.log('in interceptor responseError', rejection); // Contains the data about the error on the response.
 			// Return the promise rejection.
-			// bijvoorbeeld: 404, not found:
+			// for instance: 404, not found:
 
 			// Verberg loading indicator
 			if (rejection.status === 404) {
-				//window.location = 'views/404.html'; // of gebruik Angular $location() object.
+				//window.location = 'views/404.html'; // or use Angular $location() object.
 				$location.path('/404');
 			}
 			if (rejection.status === 401 || rejection.status === 403) { // unauthorized
-				$location.path('/login'); // of gebruik Angular $location() object.
+				$location.path('/login'); // or use Angular $location() object.
 			}
 			return rejection;
 		};
@@ -59,33 +60,34 @@
 
 	/////////////////////////////////////////////////
 	//
-	// De tweede factory op deze app, de oorspronkelijke bookFactory (om boekgegevens op te halen)
+	// The second factory on the app,
+	// to get some movie data
 	//
 	angular.module('myApp')
-		.factory('bookFactory', function ($http) {
-			// 1. Maak een 'factory'-object
+		.factory('movieFactory', function ($http) {
+			// 1. Create a 'factory'-object
 			var factory = {};
 
-			// 2. Definieer URL waar gegevens worden opgehaald (hier: Yindo API)
-			var url = 'http://api.yindo.com/api/book/new/10',
-				urlDetails = 'http://api.yindo.com/api/book/details/';
+			// 2. Define URL (here: Movie API)
+			var url = 'http://omdbapi.com/?apikey=f1f56c8e&s=',
+				urlDetails = 'http://omdbapi.com/?apikey=f1f56c8e&i=';
 
 			// 3. Definieer functies als API/interface voor de buitenwereld
-			factory.getBooks = function () {
+			factory.getMovies = function () {
 				return $http({
-					method : 'jsonp',
-					url    : url + '?callback=JSON_CALLBACK'
+					method : 'get',
+					url    : url + 'avatar' // TODO: make movie title dynamic
 				});
 			};
 
-			factory.getBookDetail = function (ean) {
+			factory.getMovieDetail = function (movieId) {
 				return $http({
-					method : 'jsonp',
-					url    : urlDetails + ean + '?callback=JSON_CALLBACK'
+					method : 'get',
+					url    : urlDetails + movieId
 				});
 			};
 
-			// 4. Altijd tot slot: retourneer het factory-object
+			// 4. Always: return factory-object
 			return factory;
 		});
 })();

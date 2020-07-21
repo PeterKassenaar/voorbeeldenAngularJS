@@ -1,5 +1,5 @@
 (function () {
-	// Getter voor de module een aangeven hoe deze wordt geconfigureerd
+	// Getter for the module and its configuration
 	angular.module('myApp', ['ngRoute'])
 		.config(configFunction);
 
@@ -8,14 +8,18 @@
 	function configFunction($routeProvider, $httpProvider) {
 		$routeProvider
 			.when('/', {
-				templateUrl : 'views/13_view01.html' // Default (en enige) view in dit eenvoudige project
+				templateUrl : 'views/13_view01.html' // Default (and only) view in this  project
 			})
-			.when('/detail/:ean', {
+			.when('/detail/:id', {
 				templateUrl : 'views/13_view_detail.html'
 			})
 			.otherwise({redirectTo : '/'});
 
-		// push de interceptor-factory op de $httpProvider-module (ze zijn gedefinieerd in 13_ng_factory01.js)
+		//**********
+		// Important:
+		// push de interceptor-factory to the  $httpProvider-module
+		// (they are defined in 13_ng_factory01.js)
+		//**********
 		$httpProvider.interceptors.push('myInterceptor');
 	}
 })(); // iffy

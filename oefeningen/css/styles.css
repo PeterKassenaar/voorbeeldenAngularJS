@@ -4,7 +4,7 @@
 ul li{
     line-height: 225%;
 }
-.book {
+.movie {
 	background: #a9f1bc;
 	border: 1px solid #666;
 	width: 240px;
@@ -16,15 +16,22 @@ ul li{
 	cursor: pointer;
 }
 
-	.book p {
+	.movie p {
 		font-size: larger;
 	}
 
-.bookTitle{
+.movieTitle{
 	font-weight: bold;
 }
-.bookAuthor {
+.movieAuthor {
 	font-style: italic;
+}
+
+.movieImg{
+	width: 80px;
+	float: left;
+	border: 2px solid firebrick;
+	padding: 4px;
 }
 
 .slide-animate.ng-enter, .slide-animate.ng-leave {

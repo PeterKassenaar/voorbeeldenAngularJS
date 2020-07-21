@@ -1,10 +1,11 @@
-﻿<div ng-controller="bookController">
+﻿<div ng-controller="movieController">
 	<h1>13 - Interceptor</h1>
 
-	<div class="book" ng-repeat="book in books| orderBy:'name'">
-		<p class="bookTitle">{{ book.title }} </p>
-		<p class="bookAuthor">{{book.firstAuthorName}}</p>
-		<a href="#/detail/{{book.ean}}" class="btn btn-primary ">Details</a>
+	<div class="movie" ng-repeat="movie in movies">
+		<img src="{{ movie.Poster}}" alt="Poster" class="movieImg">
+		<p class="movieTitle">{{ movie.Title }} </p>
+		<p class="movieAuthor">{{movie.Year}}</p>
+		<a href="#/detail/{{movie.imdbID}}" class="btn btn-primary ">Details</a>
 	</div>
 </div>
 

@@ -1,12 +1,12 @@
 ﻿<div ng-controller="detailController">
-	<h1>13 - Detailpagina voor {{ book.title }}</h1>
+	<h1>13 - Detail page on {{ movie.Title }}</h1>
 
-	<p class="bookTitle">{{ book.title }} </p>
-	<p class="bookAuthor">{{book.firstAuthorName}}</p>
-	<p class="bookDetails">{{book.description }} </p>
-	<img ng-src="{{ imgSrc }}" alt="cover van {{ book.title }}} " />
+	<p class="movieTitle">{{ movie.Title }} </p>
+	<p class="movieAuthor">{{movie.Actors}}</p>
+	<p class="movieDetails">{{movie.Plot }} </p>
+	<img ng-src="{{ imgSrc }}" alt="cover van {{ movie.Title }}} " />
 	<div style="margin-top: 20px;">
-		<a href="#/" class="btn btn-primary">Terug</a>
+		<a href="#/" class="btn btn-primary">Back</a>
 	</div>
 </div>
 

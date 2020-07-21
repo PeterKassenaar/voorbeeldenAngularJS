@@ -1,26 +1,26 @@
 ﻿(function () {
 
-	// 1. Maak de controller
-	var bookController = function ($scope, bookFactory) {
-		// 2. Call naar methode in de factory, gebruik promise-notatie 
-		bookFactory.getBooks().success(function (data) {
-			$scope.books = data;
+	// 1. Create controller
+	var movieController = function ($scope, movieFactory) {
+		// 2. Call naar methode in de factory, gebruik promise-notatie
+		movieFactory.getMovies().success(function (data) {
+			$scope.movies = data.Search;
 		});
 	};
 
-	// 2. Maak de detailcontroller (kan ook in aparte file, nu even gecombineerd)
-	var detailController = function ($scope, bookFactory, $routeParams) {
+	// 2. Create detailcontroller (SHOULD be in separate file - for now: combined)
+	var detailController = function ($scope, movieFactory, $routeParams) {
 		console.log($routeParams);
-		bookFactory.getBookDetail($routeParams.ean)
+		movieFactory.getMovieDetail($routeParams.id)
 			.success(function (data) {
 				console.log(data);
-				$scope.book = data;
-				$scope.imgSrc = 'http://content.yindo.nl/images/covers/' + data.ean + '.jpg';
+				$scope.movie = data;
+				$scope.imgSrc = data.Poster;
 			});
 	};
 
-	// 3. Controllers toevoegen aan app
-	angular.module('myApp').controller('bookController', ['$scope', 'bookFactory', bookController]);
-	angular.module('myApp').controller('detailController', ['$scope', 'bookFactory', '$routeParams', detailController]);
+	// 3. Add Controllers to the
+	angular.module('myApp').controller('movieController', ['$scope', 'movieFactory', movieController]);
+	angular.module('myApp').controller('detailController', ['$scope', 'movieFactory', '$routeParams', detailController]);
 
-})(); // bestaande module doorgeven als parameter
+})();
