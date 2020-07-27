@@ -1,0 +1,6 @@
+<h2>List of users</h2>
+<button ng-click="$ctrl.getUsers()">Get users</button>
+<div ng-repeat="user in $ctrl.users">
+    {{ user.id}} - {{ user.name }}
+    <button ng-click="$ctrl.deleteUser(user)">Delete</button>
+</div>
